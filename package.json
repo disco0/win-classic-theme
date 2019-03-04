@@ -1,0 +1,22 @@
+{
+    "name": "win-classic-theme",
+    "displayName": "WinClassic Theme",
+    "description": "Windows Classic flavored theme built around MacClassic Theme's colorpalette",
+    "version": "0.0.1",
+    "publisher": "disk0",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+			{
+				"label": "WinClassic",
+				"uiTheme": "vs",
+				"path": "./themes/WinClassic.json"
+            }
+        ]
+    }
+}

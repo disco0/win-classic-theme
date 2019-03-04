@@ -1,0 +1,13 @@
+# gitignore
+
+# Generated
+node_modules
+.vsix
+
+# Mac
+.DS_Store
+
+# Code
+.vscode/
+vsc-extension-quickstart.md
+.vscode-test/
