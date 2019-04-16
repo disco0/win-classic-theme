@@ -4,6 +4,11 @@
     "description": "Windows Classic flavored theme built around MacClassic Theme's colorpalette",
     "version": "0.0.1",
     "publisher": "disk0",
+    "homepage": "https://github.com/disco0/win-classic-theme/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/disco0/win-classic-theme.git"
+	},
     "engines": {
         "vscode": "^1.18.0"
     },
@@ -12,11 +17,17 @@
     ],
     "contributes": {
         "themes": [
-			{
-				"label": "WinClassic",
-				"uiTheme": "vs",
-				"path": "./themes/WinClassic.json"
+            {
+                "label": "WinClassic",
+                "uiTheme": "vs",
+                "path": "./themes/WinClassic-color-theme.json"
             }
         ]
-    }
+    },
+	"keywords": [
+		"MacClassic",
+		"WindowsClassic",
+		"light",
+		"theme"
+	]
 }
