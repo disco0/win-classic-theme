@@ -5,10 +5,10 @@
     "version": "0.0.1",
     "publisher": "disk0",
     "homepage": "https://github.com/disco0/win-classic-theme/blob/master/README.md",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/disco0/win-classic-theme.git"
-	},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/disco0/win-classic-theme.git"
+    },
     "engines": {
         "vscode": "^1.18.0"
     },
@@ -24,10 +24,13 @@
             }
         ]
     },
-	"keywords": [
-		"MacClassic",
-		"WindowsClassic",
-		"light",
-		"theme"
-	]
+    "keywords": [
+        "MacClassic",
+        "WindowsClassic",
+        "light",
+        "theme"
+    ],
+    "dependencies": {
+        "vscode": "^1.1.34"
+    }
 }
