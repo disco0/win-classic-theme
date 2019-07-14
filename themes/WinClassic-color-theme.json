@@ -6,8 +6,11 @@
         "activityBar.border":                                 "#867E6E",
         "activityBar.dropBackground":                         "#C6C2BB",
 
-        "badge.background":                                   "#003E6A",
-        "badge.foreground":                                   "#E9E9E9",
+        "sideBar.border":                                     "#DEDEDE",
+        "sideBarSectionHeader.background":                    "#DEDEDE",
+
+        "badge.background":                                   "#BB0000",
+        "badge.foreground":                                   "#EEEEEE",
 
         "editor.foreground":                                  "#000000",
         "editor.background":                                  "#EFEFEF",
@@ -18,7 +21,7 @@
         "editor.selectionBackground":                         "#4D97FF54",
 
         "editorCursor.foreground":                            "#003E6A",
-        "editorCursor.background":                            "#ECEEFA",
+        "editorCursor.background":                            "#EFEFEF",
         "editorIndentGuide.activeBackground":                 "#0000A2",
         "editorIndentGuide.background":                       "#C6DEFF",
         "editorLineNumber.foreground":                        "#808080",
@@ -28,7 +31,6 @@
 
         "errorForeground":                                    "#990000",
 
-        "sideBar.border":                                     "#DEDEDE",
         "scrollbar.shadow":                                   "#00000055",
         "scrollbarSlider.activeBackground":                   "#00000020",
         "scrollbarSlider.background":                         "#6F6F6F99",
