@@ -1,8 +1,8 @@
 {
     "name": "win-classic-theme",
     "displayName": "WinClassic Theme",
-    "description": "Windows Classic flavored theme built around MacClassic Theme's colorpalette",
-    "version": "0.0.1",
+    "description": "Windows Classic flavored theme built around MacClassic Theme's color palette",
+    "version": "0.0.3",
     "publisher": "disk0",
     "homepage": "https://github.com/disco0/win-classic-theme/blob/master/README.md",
     "repository": {
