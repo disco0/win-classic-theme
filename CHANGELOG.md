@@ -3,7 +3,9 @@
 - Worked on everything except the actual theme
 
 ## 0.0.2
-- Additional theme coverage
+- General filling in of unset theme values
+- Buttons/notifications changed to red
+- Other less notable tweaks to improve consistency
 
 ## 0.0.1
 - Initial release
