@@ -12,7 +12,6 @@ build_extension()
 
     # Workspace path [basedgod]
     local based="${scriptd:h}"
-    print -P "%K{27}%F{254}\tBASED: %U${based}%u%k%f"
 
     ### Build Config
     local packaged="${based}/packages"
@@ -106,9 +105,9 @@ build_extension()
     plog "Checking for npm install..."
     if [[ $commands[npm] ]]
     then
-        return 1
     else
         perr "npm not installed."
+        return 1
     fi
 
     # Go to main working path
