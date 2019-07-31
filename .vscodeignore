@@ -1,4 +1,10 @@
+# Git
+.gitignore
+
+# VSCode
 .vscode/**
 .vscode-test/**
-.gitignore
+packages/**
+scripts/**
+TODO.jsonc
 vsc-extension-quickstart.md
