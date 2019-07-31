@@ -1,11 +1,6 @@
 # Git
-.gitignore
-
-# VSCode
 .vscode/**
 .vscode-test/**
-media/**
-packages/**
-scripts/**
-TODO.jsonc
+media/workfile/**
+.gitignore
 vsc-extension-quickstart.md
