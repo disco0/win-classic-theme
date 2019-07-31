@@ -1,20 +1,26 @@
 {
-    "name": "win-classic-theme",
+    "name":        "win-classic-theme",
     "displayName": "WinClassic Theme",
-    "description": "Windows Classic flavored theme built around MacClassic Theme's color palette",
+
     "version": "0.0.3",
+
+    "description": "Windows Classic flavored theme built around MacClassic Theme's color palette",
+    "categories": [ "Themes" ],
+
     "publisher": "disk0",
     "homepage": "https://github.com/disco0/win-classic-theme/blob/master/README.md",
     "repository": {
         "type": "git",
         "url": "https://github.com/disco0/win-classic-theme.git"
     },
-    "engines": {
-        "vscode": "^1.18.0"
+
+    "engines": { "vscode": "^1.18.0" },
+
+    "icon": "./media/win-classic-theme-icon.png",
+    "galleryBanner": {
+        "color": "#E0DED9",
+        "theme": "light"
     },
-    "categories": [
-        "Themes"
-    ],
     "contributes": {
         "themes": [
             {
@@ -24,16 +30,14 @@
             }
         ]
     },
+
     "keywords": [
         "MacClassic",
         "WindowsClassic",
         "light",
         "theme"
     ],
-    "dependencies": {
-        "vsce": "^1.66.0"
-    },
-    "devDependencies": {
-        "vscode": "^1.1.35"
-    }
+
+    "dependencies":    { "vsce":   "^1.66.0" },
+    "devDependencies": { "vscode": "^1.1.35" }
 }
