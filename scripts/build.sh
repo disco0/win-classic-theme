@@ -26,7 +26,7 @@ build_extension()
     vsce_install_check()
     {
         plog "Checking vsce dependency install..."
-        if [[ "$(npm list -g --parseable vsce)" == *vsce ]]
+        if npm explore vsce --silent
         then
             plog "\tvsce installed."
             return 0
@@ -44,7 +44,7 @@ build_extension()
 
         plog "Installing vsce package..."
         # Install vsce
-        npm install vsce --dev  && { return 0 } || {
+        npm install vsce --save-dev  && { return 0 } || {
             perr "Failed. Try %Bsudo npm install -g vsce%b? (%B%Uy%b%u/n)"
             read ans
 
