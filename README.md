@@ -3,6 +3,6 @@ Windows Classic flavored VS Code theme built around MacClassic Theme's color pal
 
 ## WinClassic
 
-With Hasklig font family, and [Visual Studio classic icons theme](https://gitlab.com/jez9999/vsclassic-icon-theme):
+With Hasklig font family, and [Visual Studio Classic Icons](https://gitlab.com/jez9999/vsclassic-icon-theme):
 
-![](./media/win-classic.00.png)
+![](./media/win-classic.0.0.3.png)
