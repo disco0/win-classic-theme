@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Script path
+local scriptd="${0:a:h}"
+
 build_extension()
 {
   ### Bootstrap
@@ -7,11 +10,9 @@ build_extension()
     # Normalize environment
     emulate zsh -L
 
-    # Script path
-    local scriptd="${0:a:h}"
-
     # Workspace path [basedgod]
     local based="${scriptd:h}"
+    print -P "%K{27}%F{254}\tBASED: %U${based}%u%k%f"
 
     ### Build Config
     local packaged="${based}/packages"
@@ -19,31 +20,43 @@ build_extension()
 
   ### Functions
 
-    print_err(){ print -P "%F{red}$@%f" } >/dev/null 1>&2
+    plog(){ print -P "%F{240}$@%f" } >/dev/null 1>&2
+    perr(){ print -P "%F{red}$@%f" } >/dev/null 1>&2
 
     # npm/vsce package check
     vsce_install_check()
-    { [[ "$(npm list -g --parseable vsce)" == *vsce ]] && return 0 || return 1 }
+    {
+        plog "Checking vsce dependency install..."
+        if [[ "$(npm list -g --parseable vsce)" == *vsce ]]
+        then
+            plog "\tvsce installed."
+            return 0
+        else
+            plog "\tvsce not installed"
+            return 1
+        fi
+    }
 
     # vsce package install
     vsce_load()
     {
-        #? Skip if vsce installed.
+        # Skip if vsce installed.
         vsce_install_check && return 0
 
+        plog "Installing vsce package..."
         # Install vsce
         npm install vsce --dev  && { return 0 } || {
-            print_err "Failed. Try %Bsudo npm install -g vsce%b? (%By%b/n)"
+            perr "Failed. Try %Bsudo npm install -g vsce%b? (%B%Uy%b%u/n)"
             read ans
 
             if (( $#line < 1 )) || [[ $line = "y*" ]]
             then
                 npm install vsce --dev \
-                    && { print -P  "%F{31}vsce installed.%f" && return 0 } \
-                    || { print_err "sudo install failed."    && return 1 }
+                    && { plog "%F{31}vsce installed.%f" && return 0 } \
+                    || { perr "sudo install failed."    && return 1 }
             fi
 
-            print_err "Build cancelled."
+            perr "Build cancelled."
             return 2
         }
     }
@@ -54,11 +67,12 @@ build_extension()
       # - Stop/warn on dupe packages of same version, also overriding the warning
       # - Prompt if you want bump the version on a repeat version (with changed code)
       # ...
+        plog "Building extension package..."
 
         local extJson="${based}/package.json"
         if [[ ! -f $extJson ]]
         then
-            print_err "Extension package.json not found at: %B%U${extJson}%b%u"
+            perr "Extension package.json not found at: %B%U${extJson}%b%u"
             return 1
         fi
 
@@ -66,45 +80,54 @@ build_extension()
         local version=${"$(jq '.version' $extJson )"//\"/}
         if [[ ! ( -v name && -v version ) ]]
         then
-            print_err "Failed to parse extension name and version from project.json"
+            perr "Failed to parse extension name and version from project.json"
             return 2
         fi
 
         local extension_vsix="$packaged/$name-$version.vsix"
         if vsce package --out ${extension_vsix}
         then
-            print -P "\n%F{31}Package created.\n  %U%B>${packaged}:%u%b%f\n"
+            plog "%F{31}Package created.\n  %U%B>${packaged}:%u%b%f\n"
             ls ${packaged}
             return 0
-            
+
         else
-            print_err "Error building package: %U%B${extension_vsix}%u%b"
+            perr "Error building package: %U%B${extension_vsix}%u%b"
             return 3
         fi
 
-        return 4 #????
+        return 4
     }
+
 
   ### Setup
 
     # Check for npm
-    [[ ! $commands[npm] ]] && print_err "npm not installed." && return 1
+    plog "Checking for npm install..."
+    if [[ $commands[npm] ]]
+    then
+        return 1
+    else
+        perr "npm not installed."
+    fi
 
     # Go to main working path
+    plog "Setting working directory to repo base directory..."
     if pushd -q $based >/dev/null 2>&1
     then
         trap '
             popd -q
         ' EXIT
     else
-        print_err "Failed setting working path to repo base (%U%B$based%u%b)"
+        perr "Failed setting working path to repo base (%U%B$based%u%b)"
         return 1
     fi
 
     # Check for/create missing packages dir
+    plog "Checking for package destination path..."
     if  [[ ! -d "$packaged/" ]] || ! mkdir -p $packaged >/dev/null 2>&1
     then
-        print_err "Unable to find/create packages directory: %U$packaged%u"
+        perr "Unable to find/create packages directory: %U$packaged%u"
         return 1
     fi
 
@@ -113,9 +136,14 @@ build_extension()
     if (( $? > 0 )) { return 1 }
 
     # Generate package
-    print -P "%F{31}Creating package...%f" 1>/dev/null 1>&2
+    plog "%F{31}Creating package...%f"
     package_extension
 }
 
-build_extension
-
+(){
+    pushd -q ${0:a:h} && {
+        build_extension
+    } always {
+        popd -
+    }
+}
