@@ -1,4 +1,7 @@
 # Change Log
+## 0.0.4
+- Defined color for YAML keys
+
 ## 0.0.3
 - Worked on everything except the actual theme
 

@@ -566,6 +566,14 @@
             "settings": {
                 "foreground": "#E18AC7"
             }
+        },
+        {
+            "name": "YAML name of key",
+            "scope": "entity.name.tag.yaml",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#0000A2"
+            }
         }
     ]
 }
