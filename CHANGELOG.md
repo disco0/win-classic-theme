@@ -1,6 +1,11 @@
 # Change Log
+## 0.0.5
+- Shebangs
+- Odds and ends for syntaxes in TextMate Languages extension
+
 ## 0.0.4
 - Defined color for YAML keys
+- Terminal colors
 
 ## 0.0.3
 - Worked on everything except the actual theme

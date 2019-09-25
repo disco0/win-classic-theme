@@ -103,12 +103,6 @@
     },
     "tokenColors": [
         {
-            "settings": {
-                "foreground": "#000000FF",
-                "background": "#EFEFEF"
-            }
-        },
-        {
             "name": "Comment",
             "scope": "comment",
             "settings": {
@@ -276,7 +270,7 @@
             "scope": "invalid",
             "settings": {
                 "background": "#990000",
-                "foreground": "#FFFFFF"
+                "foreground": "#990000"
             }
         },
         {
@@ -591,6 +585,33 @@
             "settings": {
                 "fontStyle": "bold",
                 "foreground": "#0000A2"
+            }
+        },
+        /* (Shell)?scripts */
+        {
+            "name":  "Shebang",
+            "scope": [ "punctuation.definition.comment.shebang",
+                       "comment.line.number-sign.shebang"        ],
+            "settings": {
+                "foreground": "#CF0E00",
+                "fontStyle": "italic bold"
+            }
+        },
+        /* tmLanguage YAML/JSON/XML */
+        {
+            "name":     "Attribute Name",
+            "scope":    [ "entity.other.attribute-name" ],
+            "settings": {
+                "foreground": "#B90690",
+                "fontStyle":  "italic"
+            }
+        },
+        { /* Added mostly because the YAML-tmLanguage is buggy */
+            "name":     "Unrecognized",
+            "scope":    [ "invalid.illegal.unrecognized" ],
+            "settings": {
+                "foreground": "#000000",
+                "fontStyle":  "italic bold underline"
             }
         }
     ]
