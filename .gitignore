@@ -15,4 +15,4 @@ vsc-extension-quickstart.md
 
 # nvm
 .nvm-node
-.nvm
+.nvmrc
