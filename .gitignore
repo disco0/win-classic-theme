@@ -14,5 +14,5 @@ vsc-extension-quickstart.md
 .vscode-test/
 
 # nvm
-./.nvm-node
-./.nvm
+.nvm-node
+.nvm
