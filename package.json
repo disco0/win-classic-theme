@@ -2,11 +2,15 @@
     "name": "win-classic-theme",
     "displayName": "WinClassic Theme",
     "description": "Windows Classic flavored theme built around MacClassic Theme's color palette",
-    "version": "0.0.5",
+    "version": "0.0.6",
+    "author": {
+        "name": "disk0",
+        "url": "https://github.com/disco0"
+    },
+    "publisher": "disk0",
     "categories": [
         "Themes"
     ],
-    "publisher": "disk0",
     "homepage": "https://github.com/disco0/win-classic-theme/blob/master/README.md",
     "repository": {
         "type": "git",
@@ -38,5 +42,9 @@
     "devDependencies": {
         "vsce": "^1.66.0",
         "vscode": "^1.1.36"
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "nvm": "~/.nvm/nvm-exec which node | xargs -J % ln -sf % ./.nvm-node && chmod +x ./.nvm-node"
     }
 }

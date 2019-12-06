@@ -75,9 +75,12 @@ build_extension()
             return 1
         fi
 
-        local    name=${"$(jq '.name'    $extJson )"//\"/}
-        local version=${"$(jq '.version' $extJson )"//\"/}
-        if [[ ! ( -v name && -v version ) ]]
+        local -A ext_info=(
+            $(jq -r '"name \(.name) version \(.version)" | @text' $extJson) )
+        local name=${ext_info[name]}
+        local version=${ext_info[version]}
+
+        if [[ ! ( -v name && -v version ) || "${ext_info}" = *null* ]]
         then
             perr "Failed to parse extension name and version from project.json"
             return 2
@@ -86,8 +89,13 @@ build_extension()
         local extension_vsix="$packaged/$name-$version.vsix"
         if vsce package --out ${extension_vsix}
         then
-            plog "%F{31}Package created.\n  %U%B>${packaged}:%u%b%f\n"
-            ls ${packaged}
+            plog "%F{31}Package created.\n\n > %U%B${packaged}%u%b%f"
+            if [ $commands[exa] ]
+            then
+                exa -l -stime --reverse "${packaged}"
+            else
+                ls -l ${packaged}
+            fi
             return 0
 
         else
