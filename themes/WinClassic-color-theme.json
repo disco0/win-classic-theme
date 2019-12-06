@@ -608,10 +608,65 @@
         },
         { /* Added mostly because the YAML-tmLanguage is buggy */
             "name":     "Unrecognized",
-            "scope":    [ "invalid.illegal.unrecognized" ],
+            "scope":    [ "invalid.illegal",
+                          "invalid.illegal.unrecognized"  ],
             "settings": {
-                "foreground": "#000000",
-                "fontStyle":  "italic bold underline"
+                "foreground": "#F00",
+                "fontStyle":  "italic bold underline",
+            }
+        },
+    /* [0.0.6] */
+        /** Javascript
+          * Import statements and object literals
+          */
+        {
+            "name": "Javascript Object Literal Keys",
+            "scope": "meta.object-literal.key",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#262c60"
+            }
+        },
+        {
+            "name": "Javascript Object Literal Key [Function]",
+            "scope": "meta.object.member.js meta.object-literal.key.js entity.name.function.js ",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#172bc0"
+            }
+        },
+        {
+            "name": "Javascript Import Statement",
+            "scope": [
+                "keyword.control.import.js",
+                "meta.function-call.js support.function.js"
+            ],
+            "settings": {
+                "fontStyle":  "bold",
+                "foreground": "#1E39F6"
+            }
+        },
+        {
+            "name": "Javascript Console Object",
+            "scope": "meta.function-call.js support.class.console",
+            "settings": {
+                "fontStyle":  "bold",
+                "foreground": "#125cdc"
+            }
+        },
+        /** lua
+         *  EmmyLua Documentation/Annotation
+         *  - Inteded for immediate use with extended lua syntax in extension
+         *    tangzx.emmylua (id: lua, name: EmmyLua). Will append with future
+         *    extended grammars.
+         */
+        {
+            "name": "Lua Documentation Type",
+            "scope": "comment.line.double-dash.lua keyword.other.documentation",
+            "settings": {
+                // "foreground": "#00AABB",
+                "foreground": "#318495",
+                "fontStyle": "italic bold"
             }
         }
     ]
