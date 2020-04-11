@@ -2,29 +2,61 @@
     "name": "WinClassic",
     "type": "light",
     "colors": {
-        "activityBar.background":                             "#D4D0C8",
-        "activityBar.border":                                 "#867E6E",
-        "activityBar.dropBackground":                         "#C6C2BB",
+		"activityBar.foreground":                            "#ffffff",
+        "activityBar.background":                            "#D4D0C8",
+		"activityBar.activeBorder":                          "#ffffff",
+        "activityBar.border":                                "#867E6E",
+		"activityBar.inactiveForeground":                    "#ffffff66",
+        "activityBar.dropBackground":                        "#C6C2BB",
+		"activityBarBadge.background":                       "#007acc",
+		"activityBarBadge.foreground":                       "#ffffff",
 
         "badge.background":                                   "#CC0000",
         "badge.foreground":                                   "#EEEEEE",
 
         "editor.foreground":                                  "#000000",
         "editor.background":                                  "#EFEFEF",
-        "editor.findMatchBackground":                         "#FFE6BB",
-        "editor.findMatchHighlightBackground":                "#FFE6BB",
-        "editor.lineHighlightBackground":                     "#E9E9E9",
+
+        "editor.findMatchBorder":                             "#FFE6BB",
+        "editor.findMatchBackground":                         "#FFE6BBBB",
+
+        // Combination of non-opaque background and border causes irregular
+        // patterning probably due to line heights? Issue persists even with
+        // fully transparent border.
+        // "editor.findRangeHighlightBorder":                    "#00000000",
+        "editor.findRangeHighlightBackground":                "#B4B4B44B",
+        "editor.findMatchHighlightBorder":                    "#FFE6BBBB",
+        "editor.findMatchHighlightBackground":                "#FFE6BBBB",
+
+        "editor.foldBackground":                              "#4499ff10",
+
+        "editor.lineHighlightBackground":                     "#E4E4E490",
         "editor.rangeHighlightBackground":                    "#66BBFF55",
         "editor.selectionBackground":                         "#4499FF55",
 
-        "editorCursor.foreground":                            "#003E6A",
-        "editorCursor.background":                            "#EFEFEF",
-        "editorIndentGuide.activeBackground":                 "#0000A2",
-        "editorIndentGuide.background":                       "#C6DDFF",
-        "editorLineNumber.foreground":                        "#808080",
-        "editorOverviewRuler.border":                         "#CFCFCF",
-        "editorOverviewRuler.wordHighlightStrongForeground":  "#003E6A",
-        "editorWhitespace.foreground":                        "#BFBFBF",
+        "editorCursor.foreground":                           "#003E6A",
+        "editorCursor.background":                           "#EFEFEF",
+
+        "editorIndentGuide.activeBackground":                "#0018a260",
+        "editorIndentGuide.background":                      "#C6DDFF80",
+
+        "editorLineNumber.foreground":                       "#808080",
+
+        "editorOverviewRuler.border":                        "#C8C8C8",
+        "editorOverviewRuler.wordHighlightStrongForeground": "#003E6A",
+
+		"editorSuggestWidget.border":                        "#c8c8c8",
+		"editorSuggestWidget.background":                    "#f3f3f3",
+        "editorSuggestWidget.foreground":                    "#222",
+        "editorSuggestWidget.highlightForeground":           "#000030",
+		"editorSuggestWidget.selectedBackground":            "#0066ff22",
+
+        "editorWhitespace.foreground":                       "#BFBFBF",
+
+        "editorWidget.background":                           "#ededed",
+        "editorWidget.border":                               "#40404020",
+        "editorWidget.foreground":                           "#222222",
+        "editorWidget.resizeBorder":                         "#00000000",
 
         "errorForeground":                                    "#990000",
 
@@ -71,21 +103,21 @@
         "statusBar.noFolderBackground":                       "#0000A2",
         "statusBar.noFolderForeground":                       "#E9E9E9",
 
+        "terminal.ansiBrightWhite":                           "#EDEDED",
+        "terminal.ansiWhite":                                 "#BBB",
+        "terminal.ansiBrightBlack":                           "#666",
         "terminal.ansiBlack":                                 "#000000",
         "terminal.ansiBlue":                                  "#0451a5",
         "terminal.ansiCyan":                                  "#0598bc",
         "terminal.ansiGreen":                                 "#00BC41",
         "terminal.ansiMagenta":                               "#bc05bc",
         "terminal.ansiRed":                                   "#cd3131",
-        "terminal.ansiWhite":                                 "#dedede",
         "terminal.ansiYellow":                                "#CC5500",
-        "terminal.ansiBrightBlack":                           "#666666",
         "terminal.ansiBrightBlue":                            "#0066FF",
         "terminal.ansiBrightCyan":                            "#0598bc",
         "terminal.ansiBrightGreen":                           "#14ce14",
         "terminal.ansiBrightMagenta":                         "#db05db",
         "terminal.ansiBrightRed":                             "#D51015",
-        "terminal.ansiBrightWhite":                           "#EDEDED",
         "terminal.ansiBrightYellow":                          "#FF7E00",
 
         "terminal.border":                                    "#66666611",
@@ -98,7 +130,8 @@
         "tree.indentGuidesStroke":                            "#00000011",
 
         "titleBar.activeBackground":                          "#D4D0C8",
-        "titleBar.activeForeground":                          "#867E6E"
+        "titleBar.activeForeground":                          "#867E6E",
+
 
     },
     "tokenColors": [
@@ -615,6 +648,13 @@
                 "fontStyle":  "italic bold underline",
             }
         },
+
+    /**
+     * Note: The proceeding version updates only mark when things were added,
+     *       not revised—mostly for recalling after I forget to do the
+     *       changelog immediately
+     */
+
     /* [0.0.6] */
         /** Javascript
           * Import statements and object literals
@@ -667,6 +707,138 @@
                 // "foreground": "#00AABB",
                 "foreground": "#318495",
                 "fontStyle": "italic bold"
+            }
+        },
+    /* [0.0.7] */
+        /** General
+         *  Import Statements
+         *  - from | import (to exclusion of more refined scopes)
+         */
+        {
+            "name": "Import Statements: import Keyword",
+            "scope": [
+                "keyword.control.import"
+            ],
+            "settings": {
+                "fontStyle":  "bold",
+                "foreground": "#1E39F6"
+            }
+        },
+        {
+            "name": "Import Statements: from Keyword",
+            "scope": [
+                "keyword.control.import.from"
+            ],
+            "settings": {
+                "fontStyle":  "bold italic",
+                "foreground": "#1E39F6"
+            }
+        },
+
+    /* [0.0.9] */
+        /** JSON
+         *  - Property keys now switch between a set of colors for aiding
+         *    navigation
+         *  - Property key escaped char tweak
+         */
+        {
+            "name": "JSON Property: Escaped Char",
+            "scope": [
+                "meta.structure.dictionary.json support.type.property-name.json constant.character.escape.json"
+            ],
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#26B31A"
+            }
+        },
+        {
+            "name": "JSON Property Names, Top Level",
+            "scope": [
+                "meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#172bc0",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 1",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#262c60",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 2",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#172bc0",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 3",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#262c60",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 4",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#1528b4",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 5",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#262c60",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 6",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#0000A2",
+                "fontStyle": "",
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 7",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#262c60",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "JSON Property Names, Nesting Level: 8",
+            "scope": [
+                "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
+            ],
+            "settings": {
+                "foreground": "#0000A2",
+                "fontStyle": ""
             }
         }
     ]

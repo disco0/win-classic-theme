@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.0.9
+
+- __JSON:__ Property keys now switch between a set of colors for aiding navigation.
+- __JSON:__ Property key escaped char tweak.
+
+## 0.0.8
+
+- Lightened background of folded code and indent guides, active and inactive
+
+## 0.0.7
+
+- Import Statements: Added color and styles for (non-language scoped) `import`
+  and `from` keywords-added to fix python specifically, but should improve any
+  other language with a non-language scoped usage of the keywords.
+
 ## 0.0.6
 
 - __Javascript:__ Import statements and object literals
