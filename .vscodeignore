@@ -15,3 +15,6 @@ jsconfig.json
 
 # Existing builds
 packages/*
+
+# Not needed
+test/*
