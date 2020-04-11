@@ -4,3 +4,14 @@
 media/workfile/**
 .gitignore
 vsc-extension-quickstart.md
+
+# macOS
+.DS_Store
+
+# node / nvm
+node-modules
+.nvmrc
+jsconfig.json
+
+# Existing builds
+packages/*
