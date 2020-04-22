@@ -17,4 +17,5 @@ jsconfig.json
 packages/*
 
 # Not needed
-test/*
+test
+scripts
