@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.10
+
+- __Stylus:__ Added selectors for basic syntax elements
+
 ## 0.0.9
 
 - __JSON:__ Property keys now switch between a set of colors for aiding navigation.

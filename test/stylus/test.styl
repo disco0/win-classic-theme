@@ -1,0 +1,73 @@
+join(delim, args)
+    buf = ''
+    buf += i ? delim + arg : arg for arg, i in args
+
+for i in 1 2 3 4 5
+    &h{i}
+        top: {i}em
+
+// No scoping yet
+@-moz-document domain("2ality.com")
+
+/*
+ /-> punctuation.definition.keyword.stylus
+|    meta.at-rule.media.stylus                     keyword.control.at-rule.media.stylus
+|    source.stylus                                 meta.at-rule.media.stylus
+|  /---------------------------------------------> source.stylus
+| | */
+@media (max-width: 0)
+    code
+        font-family:    CodeFont !important
+        font-weight:    400
+        letter-spacing: CodeLetterSpacing
+
+        .hljs-
+            &function
+                color:      #0044CC
+
+            &keyword
+                font-weight: 700
+                color:     #CC0000
+
+            &title
+                text-decoration: underline
+
+            &params
+                color:       #026d51
+                font-weight: 500
+
+            &built_in
+                color:          #0AF
+                font-weight:     600
+                text-decoration: underline
+    pre
+        background:     #F3F3F3
+        // box-shadow:     0em -.3em 0.2em 0.6em #EEE4
+        width:          200vw
+        margin-left:    -25vw
+        padding-left:   25vw
+
+        code
+            font-size:   CodeFontSize
+
+    mobile()
+        @media (max-width: 480px)
+            {block}
+
+    +mobile()
+        width: 10px
+
+    #test
+        widows: 3
+
+    [role="main"] div.section
+        & h{i}  for i = 1..3
+            max-width: 750px
+		    width:     90%
+
+    .foo
+        &__bar
+            width: 10px
+
+            ^[0]:hover &
+                width: 20px

@@ -840,6 +840,131 @@
                 "foreground": "#0000A2",
                 "fontStyle": ""
             }
-        }
+        },
+
+    /* [0.0.10] */
+        /** Stylus
+         *  - General scoping details
+         */
+        {
+            "name": "Stylus Variable - Non-Declaration (Targets variable scope in nested meta scope)",
+            "scope": "source.stylus meta.property-list.css variable.stylus, source.stylus meta.property-list.css meta.property-value variable.stylus, source.stylus meta.function variable.stylus",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#132be1"
+            }
+        },
+        {
+            "name": "Stylus Variable - Declaration (Only targets variable scope outside of meta scope)",
+            "scope": "source.stylus variable.stylus",
+            "settings": {
+                "fontStyle": "bold italic",
+                "foreground": "#1121d5"
+            }
+        },
+        {
+            "name": "Stylus Property Name - Declaration",
+            "scope": "source.stylus meta.property-list support.function.mixin.stylus",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#1f5279"
+            }
+        },
+        {
+            "name": "Stylus Hash Key",
+            "scope": "source.stylus meta.property-list.css meta.property-key.css",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#0676a5"
+            }
+        },
+        {
+            "name": "Stylus Property Name (Bold Tweak)",
+            "scope": "source.stylus support.type.property-name",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#000044"
+            }
+        },
+        {
+            "name": "Stylus Property Value",
+            "scope": "source.stylus meta.property-value",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#0000A2"
+            }
+        },
+        {
+            "name": "Stylus Property Value Constant",
+            "scope": "source.stylus meta.property-value support.constant.property-value",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#0000A2"
+            }
+        },
+        {
+            "name": "Stylus Property Name (Bold Tweak)",
+            "scope": "source.stylus meta.property-value punctuation.separator.key-value",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#450c0c"
+            }
+        },
+        {
+            "name": "Stylus Numeric Literal Value - Assignment",
+            "scope": "source.stylus constant.numeric.css",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#990000"
+            }
+        },
+        {
+            "name": "Stylus Value - Units",
+            "scope": "source.stylus constant keyword.other.unit",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#520000"
+            }
+        },
+        {
+            "name": "Stylus Selector - ID ",
+            "scope": "source.stylus entity.other.attribute-name.id",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#D51015"
+            }
+        },
+        {
+            "name": "Stylus Selector - Tag",
+            "scope": "source.stylus entity.name.tag",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#0000FF"
+            }
+        },
+        {
+            "name": "Stylus Interpolation - Variable",
+            "scope": "source.stylus meta.interpolation",
+            "settings": {
+                "fontStyle": "bold underline",
+                "foreground": "#318495"
+            }
+        },
+        {
+            "name": "Stylus Punctuation - Brace",
+            "scope": "source.stylus meta.brace",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#000000"
+            }
+        },
+        {
+            "name": "Stylus Punctuation - At-Rule '@'",
+            "scope": "source.stylus meta.at-rule punctuation.definition.keyword",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#0000FF"
+            }
+        },
     ]
 }
