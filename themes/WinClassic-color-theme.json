@@ -842,7 +842,7 @@
             }
         },
 
-    /* [0.0.10] */
+    /* [0.0.10-11] */
         /** Stylus
          *  - General scoping details
          */
@@ -915,7 +915,7 @@
             "scope": "source.stylus constant.numeric.css",
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "#990000"
+                "foreground": "#D51015"
             }
         },
         {
@@ -923,7 +923,15 @@
             "scope": "source.stylus constant keyword.other.unit",
             "settings": {
                 "fontStyle": "",
-                "foreground": "#520000"
+                "foreground": "#c51117"
+            }
+        },
+        {
+            "name": "Stylus Selector - Class",
+            "scope": "source.stylus entity.other.attribute-name.class",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#318495"
             }
         },
         {
@@ -966,5 +974,119 @@
                 "foreground": "#0000FF"
             }
         },
+
+    /* [0.0.11] */
+        /** RegExp
+         *  - General scoping for nested contexts
+         */
+        {
+            "name": "Regex - Anchors",
+            "scope": "entity.other.control.anchors",
+            "settings": {
+                "foreground": "#FF0000",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Regex - Escaped Characters",
+            "scope": "constant.character.escape.general",
+            "settings": {
+                "fontStyle": "underline"
+            }
+        },
+        {
+            "name": "Regex - Quantifier",
+            "scope": "support.operator.quantifier.regexp",
+            "settings": {
+                "foreground": "#0000FF",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Regex - Named Capture Delimiter (?<name>), Lookahead, Lookbehind",
+            "scope": [
+                "meta.regexp.group string.regexp constant.other.assertion.regexp",
+                "meta.group.regexp meta.group.assertion.regexp punctuation.definition.group.assertion.regexp meta.assertion.negative-look-ahead.regexp",
+                "meta.group.regexp meta.group.assertion.regexp punctuation.definition.group.regexp",
+                "source.js meta.group meta.assertion.negative-look-behind.regexp",
+                "source.jsx meta.group meta.assertion.negative-look-behind.regexp",
+                "source.js meta.group.regexp punctuation.definition.group.regexp",
+                "source.js meta.var.expr.js string.regexp.js meta.group.assertion.regexp punctuation.definition.group.assertion.regexp meta.assertion.negative-look-ahead.regexp",
+                "source.js meta.var.expr.js string.regexp.js meta.group.regexp punctuation.definition.group.regexp"
+            ],
+            "settings": {
+                "foreground": "#0088AA",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Regex - Named Capture Declaration",
+            "scope": [
+                "meta.regexp.group string constant.other variable.other",
+                "source.js string.regexp.js meta.group.regexp punctuation.definition.group.regexp variable.other"
+            ],
+            "settings": {
+                "foreground": "#D51015",
+                "fontStyle": "bold underline"
+            }
+        },
+
+        {
+            "name": "Regex - Capture Reference Delimiter",
+            "scope": [
+                "meta.regexp.group keyword.other.subexp-call.regexp"
+            ],
+            "settings": {
+                "foreground": "#D51015",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Regex - Capture Reference",
+            "scope": [
+                "meta.regexp.group keyword.other.backref variable.other",
+                "meta.regexp.group keyword.other.subexp-call.regexp variable.other",
+                "meta.group.regexp meta.group.assertion.regexp keyword.other.back-reference.regexp"
+
+            ],
+            "settings": {
+                "foreground": "#D51015",
+                "fontStyle": "underline"
+            }
+        },
+        {
+            "name": "Regex - Group Delimiters",
+            "scope": [
+                "meta.regexp.group storage.type.regexp.group",
+                "source.js meta.var.expr.js string.regexp.js meta.group.regexp punctuation.definition.group.regexp"
+            ],
+            "settings": {
+                "foreground": "#E18AC7",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Regex - Set Delimiters",
+            "scope": [
+                "string.regexp.set",
+                "string.regexp.set.js",
+                "source.js string.regexp meta.group.assertion constant.other.character-class.set punctuation.definition.character-class.regexp"
+            ],
+            "settings": {
+                "foreground": "#6E79F1",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Regex - Internal Tokens",
+            "scope": [
+                "source.js string.regexp.js meta.group.assertion.regexp constant.other.character-class.set.regexp",
+                "source.js meta.var.expr.js string.regexp.js meta.group.regexp"
+            ],
+            "settings": {
+                "foreground": "#0000A2",
+                "fontStyle": ""
+            }
+        }
     ]
 }

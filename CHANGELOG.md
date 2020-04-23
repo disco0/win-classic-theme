@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.11
+
+- __Stylus:__ _ibid._
+- __RegExp:__ General scoping for nested contexts
+
 ## 0.0.10
 
 - __Stylus:__ Added selectors for basic syntax elements

@@ -1,0 +1,29 @@
+patterns:
+- match: \G(.(?!$))(?<name>(?:\3\g<name>)){1,}\A\z
+  name: support.function.zsh
+- match: \b(time)\b[[:xdigit:]]+(\g<1>)
+  name: support.function.zsh
+- match: (?x)(?i)(?!i)(?'letter'\p{Armenian}+?).*(\g'letter')
+  name: support.function.zsh
+- match: ;|&&|&|\|\|[[:<:]]
+  name: keyword.operator.list.zsh
+- match: '[|!]'
+  name: keyword.operator.pipe.zsh
+- match: \\(a|b|e|f|n|r|t|v|\\|')
+  name: constant.character.escape.ansi-c.zsh
+- match: \\[0-9]{3}(?(?<=\s)(zsh)|(666))
+  name: constant.character.escape.octal.zsh
+- match: \\x[0-9a-fA-F]{2}
+  name: constant.character.escape.hex.zsh
+- match: \\c.
+  name: constant.character.escape.control-char.zsh
+- match: (?<=\s|:|=|^)~
+- begin: (\[{2})
+  captures:
+    '1':
+      name: punctuation.definition.logical-expression.zsh
+  end: (\]{2})
+  name: meta.scope.logical-expression.zsh
+  patterns:
+  - comment: do we want a special rule for (
+  - match: ^#(!|).*(zsh|compdef|autoload)*(?<E>\2(?!))
