@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.12
+
+- __JSON-tmLanguage:__ Adjustment for questionable top level error scope
+
 ## 0.0.11
 
 - __Stylus:__ _ibid._

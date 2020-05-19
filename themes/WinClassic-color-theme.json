@@ -1087,6 +1087,18 @@
                 "foreground": "#0000A2",
                 "fontStyle": ""
             }
+        },
+    /* [0.0.12] */
+        /** JSON-tmLanguage
+         *  - Adjustment for questionable top level error scope
+         */
+        {
+            "name": "JSON-tmLanguage - begin|end|match Definition",
+            "scope": "source.json-tmlanguage meta.definition.error.data.json-tmlanguage",
+            "settings": {
+                "foreground": "#0000A2",
+                "fontStyle": ""
+            }
         }
     ]
 }
