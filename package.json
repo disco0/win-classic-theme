@@ -40,11 +40,8 @@
         "theme"
     ],
     "devDependencies": {
-        "vsce": "^1.66.0",
-        "vscode": "^1.1.36"
+        "vsce": "^1.66.0"
     },
     "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "nvm": "~/.nvm/nvm-exec which node | xargs -J % ln -sf % ./.nvm-node && chmod +x ./.nvm-node"
     }
 }
