@@ -3,6 +3,13 @@
 # Script path
 local scriptd="${0:a:h}"
 
+# Check for immediate install
+local install=false
+if [[ -n "$1" && "$1" == (--install|-i) ]] {
+    install=true
+}
+
+
 build_extension()
 {
   ### Bootstrap
@@ -96,6 +103,26 @@ build_extension()
             else
                 ls -l ${packaged}
             fi
+
+
+            if { $update } {
+                plog "%F{31}Install flag passed, installing for all code versions%f"
+
+                # Find best executables
+                local -a code_commands=( ${(kM)commands:#code(-insiders|)(|.cmd)} )
+                if [[ -n ${(M)code_commands:#*cmd} ]]
+                then
+                    # WSL Mode
+                    builtin alias -s cmd='cmd.exe /C '
+                    code_commands=( 'cmd.exe /C '${(M)^code_commands:#*.cmd} )
+                    extension_vsix="$(wslpath -w $extension_vsix)"
+                fi
+
+                foreach code ( ${(@)^code_commands} )
+                    $=code --install-extension "$extension_vsix" --force
+                end
+            }
+
             return 0
 
         else
