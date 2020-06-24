@@ -1,6 +1,13 @@
 {
     "compilerOptions": {
-        "target": "es6"
+        "target": "es6",
+        "noEmit": true,
+        "checkJs": true,
+        "strict": true
     },
+    "typeAcquisition": {
+        "enable": true
+    },
+    "include": [ "scripts/*.js" ],
     "exclude": [ "test/*.js" ]
 }
