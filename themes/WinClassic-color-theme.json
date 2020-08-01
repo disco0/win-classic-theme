@@ -60,6 +60,14 @@
 
         "errorForeground":                                    "#990000",
 
+        "inputOption.activeForeground":                       "#867E6E",
+        "inputOption.activeBackground":                       "#66BBFF55",
+
+        "input.placeholderForeground":                        "#C8C8C8",
+        "input.foreground":                                   "#222222",
+        "input.background":                                   "#FFFFFF",
+        "input.border":                                       "#00000000",
+
         "list.activeSelectionForeground":                     "#EEEEEE",
         "list.activeSelectionBackground":                     "#0066FF",
         "list.inactiveSelectionForeground":                   "#404040",
@@ -1098,6 +1106,51 @@
             "settings": {
                 "foreground": "#0000A2",
                 "fontStyle": ""
+            }
+        },
+    /* [0.0.13] */
+        /** Log
+         *  - Scopes for grammar used by extension
+         *  Workbench colors
+         *  - inputOption: activeForeground, activeBackground
+         *  - input: background, border, placeholderForeground, foreground
+         */
+        {
+            "scope": "log.debug",
+            "settings": {
+                "foreground": "#00CC44"
+            }
+        },
+        {
+            "scope": "log.error",
+            "settings": {}
+        },
+        {
+            "scope": "log.exception",
+            "settings": {}
+        },
+        {
+            "scope": "log.info",
+            "settings": {
+                "foreground": "#2371BB"
+            }
+        },
+        {
+            "scope": "log.string",
+            "settings": {
+                "foreground": "#036A07"
+            }
+        },
+        {
+            "scope": "log.exceptiontype",
+            "settings": {
+                "foreground": "#E97305"
+            }
+        },
+        {
+            "scope": "log.warning",
+            "settings": {
+                "foreground": "#D85306"
             }
         }
     ]

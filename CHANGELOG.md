@@ -1,13 +1,19 @@
 # Change Log
 
+## 0.0.13
+
+- __Log:__ Scopes for grammar used by extension `emilast.logfilehighlighter`
+- __Editor:__ background, border, placeholderForeground, foreground
+- __Editor:__ inputOption: activeForeground, activeBackground
+
 ## 0.0.12
 
 - __JSON-tmLanguage:__ Adjustment for questionable top level error scope
 
 ## 0.0.11
 
-- __Stylus:__ _ibid._
 - __RegExp:__ General scoping for nested contexts
+- __Stylus:__ _ibid._
 
 ## 0.0.10
 
