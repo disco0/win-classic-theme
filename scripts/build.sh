@@ -4,11 +4,8 @@
 local scriptd="${0:a:h}"
 
 # Check for immediate install
-local install && unset install
-if [[ -n "$1" && "$1" == (--install|-i) ]] {
-    install=true
-}
-
+unset OPT_INSTALL
+zparseopts -E -D -K -- {i,-install}'=OPT_INSTALL'
 
 build_extension()
 {
@@ -105,7 +102,8 @@ build_extension()
             fi
 
 
-            if (( $+update )) {
+            if (( $+OPT_INSTALL ))
+            then
                 plog "%F{31}Install flag passed, installing for all code versions%f"
 
                 # Find best executables
@@ -121,7 +119,7 @@ build_extension()
                 foreach code ( ${(@)^code_commands} )
                     $=code --install-extension "$extension_vsix" --force
                 end
-            }
+            fi
 
             return 0
 
