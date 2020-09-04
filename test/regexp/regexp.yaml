@@ -1,3 +1,5 @@
+# [PackageDev]
+
 patterns:
 - match: \G(.(?!$))(?<name>(?:\3\g<name>)){1,}\A\z
   name: support.function.zsh
