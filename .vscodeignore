@@ -1,6 +1,8 @@
-# Git
+# User settings
 .vscode/**
+# Test files
 .vscode-test/**
+# Media workfiles
 media/workfile/**
 .gitignore
 vsc-extension-quickstart.md
