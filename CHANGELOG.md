@@ -1,5 +1,23 @@
 # Change Log
 
+## 0.0.16
+
+- __Shellscript:__ Refined regexp captures used in better-shell-syntax's grammar extension (used in extended sed parsing, etc)
+- __Regexp:__ Tweaks to settings/scope for some styles, mostly related to sets
+- __{Type,Java}Script:__ Regexp literal flags
+
+## 0.0.15
+
+- __TOML:__ Quick fix for 0.0.14
+
+## 0.0.14
+
+- __tmLanguages:__ Capture groups
+- __TypeScript:__ Decorators (shadowed by semantic highlighting)
+- __Ruby:__ Function names
+- __INI:__ Section group titles, keywords
+- __TOML:__ Table keys
+
 ## 0.0.13
 
 - __Log:__ Scopes for grammar used by extension `emilast.logfilehighlighter`

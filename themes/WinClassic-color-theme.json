@@ -2,14 +2,14 @@
     "name": "WinClassic",
     "type": "light",
     "colors": {
-		"activityBar.foreground":                            "#ffffff",
+		    "activityBar.foreground":                            "#ffffff",
         "activityBar.background":                            "#D4D0C8",
-		"activityBar.activeBorder":                          "#ffffff",
+		    "activityBar.activeBorder":                          "#ffffff",
         "activityBar.border":                                "#867E6E",
-		"activityBar.inactiveForeground":                    "#ffffff66",
+		    "activityBar.inactiveForeground":                    "#ffffff66",
         "activityBar.dropBackground":                        "#C6C2BB",
-		"activityBarBadge.background":                       "#007acc",
-		"activityBarBadge.foreground":                       "#ffffff",
+		    "activityBarBadge.background":                       "#007acc",
+		    "activityBarBadge.foreground":                       "#ffffff",
 
         "badge.background":                                   "#CC0000",
         "badge.foreground":                                   "#EEEEEE",
@@ -45,11 +45,11 @@
         "editorOverviewRuler.border":                        "#C8C8C8",
         "editorOverviewRuler.wordHighlightStrongForeground": "#003E6A",
 
-		"editorSuggestWidget.border":                        "#c8c8c8",
-		"editorSuggestWidget.background":                    "#f3f3f3",
+		    "editorSuggestWidget.border":                        "#c8c8c8",
+		    "editorSuggestWidget.background":                    "#f3f3f3",
         "editorSuggestWidget.foreground":                    "#222",
         "editorSuggestWidget.highlightForeground":           "#000030",
-		"editorSuggestWidget.selectedBackground":            "#0066ff22",
+		    "editorSuggestWidget.selectedBackground":            "#0066ff22",
 
         "editorWhitespace.foreground":                       "#BFBFBF",
 
@@ -770,7 +770,7 @@
             }
         },
         {
-            "name": "JSON Property Names, Nesting Level: 1",
+            "name": "JSON Property Namx es, Nesting Level: 1",
             "scope": [
                 "meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
             ],
@@ -982,10 +982,15 @@
                 "foreground": "#0000FF"
             }
         },
-
     /* [0.0.11] */
         /** RegExp
          *  - General scoping for nested contexts
+         */
+        /*
+         * [0.0.16 - Modification]
+         * Updated: Added additional scopes for shellscript.
+         * TODO: Consider generalizing (remove base source.{lang}s) and see
+         *       if that causes any problems
          */
         {
             "name": "Regex - Anchors",
@@ -1066,6 +1071,8 @@
             "name": "Regex - Group Delimiters",
             "scope": [
                 "meta.regexp.group storage.type.regexp.group",
+                // better-shell-syntax
+                "punctuation.definition.group.regexp.shell",
                 "source.js meta.var.expr.js string.regexp.js meta.group.regexp punctuation.definition.group.regexp"
             ],
             "settings": {
@@ -1078,7 +1085,7 @@
             "scope": [
                 "string.regexp.set",
                 "string.regexp.set.js",
-                "source.js string.regexp meta.group.assertion constant.other.character-class.set punctuation.definition.character-class.regexp"
+                "source.js string.regexp meta.group.assertion constant.other.character-class.set punctuation.definition.character-class.regexp",
             ],
             "settings": {
                 "foreground": "#6E79F1",
@@ -1089,10 +1096,99 @@
             "name": "Regex - Internal Tokens",
             "scope": [
                 "source.js string.regexp.js meta.group.assertion.regexp constant.other.character-class.set.regexp",
-                "source.js meta.var.expr.js string.regexp.js meta.group.regexp"
+                "source.js meta.var.expr.js string.regexp.js meta.group.regexp",
+
+                "source.shell meta.var.expr.js string.regexp.js meta.group.regexp",
             ],
             "settings": {
                 "foreground": "#0000A2",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Shellscript - Better Shellscript - Regex Anchors",
+            "scope": [
+              "keyword.control.anchor.regexp"
+            ],
+            "settings": {
+                // "foreground": "#B60DFC",
+                "foreground": "#00D",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Shellscript - Better Shellscript - Regex Uncaptured Group `?:`",
+            "scope": [
+              "punctuation.definition.group.no-capture.regexp.shell"
+            ],
+            "settings": {
+                // TODO: When a better color for unnamed captures is decided on
+                //       merge this one with main scope style
+                "foreground": "#d53053",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            /**
+             * Intended to capture [[:space:]], and similar classes.
+             * Scopes used by better shell syntax are not very specific so this
+             * will overlap.
+             *
+             * TODO: Add meta.capture.group or more appropirate scope to entire
+             *       regexp.
+             */
+            "name": "Shellscript - Better Shellscript - UNIX Character Classes (?)",
+            "scope": [
+                "punctuation.definition.character-class.named.regexp.shell"
+            ],
+            "settings": {
+                "foreground": "#0000A2",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            /**
+             * Intended to capture [[:space:]], and similar classes.
+             * Scopes used by better shell syntax are not very specific so this
+             * will overlap.
+             *
+             * TODO: Add capture for `-` to style it in a less visible color
+             */
+            "name": "Shellscript - Better Shellscript - Regexp Set Range",
+            "scope": [
+                "constant.other.character-class.set.regexp.shell constant.other.character-class.range.regexp.shell"
+            ],
+            "settings": {
+                "foreground": "#0088AA",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            /**
+             * TODO: Refine capture groups for regexp sets in better-shell-syntax
+             * TODO: Return to main style for sets after refined captures added
+             */
+            "name": "Shellscript - Better Shellscript - Regexp Delimiters",
+            "scope": [
+               "punctuation.definition.character-class.regexp.shell",
+               "constant.other.character-class.set.regexp.shell keyword.operator.negation.regexp.shell",
+            ],
+            "settings": {
+                "foreground": "#C00",
+                "fontStyle": ""
+            }
+        },
+        {
+            /**
+             * TODO: Refine capture groups for regexp sets in better-shell-syntax
+             * TODO: Return to main style for sets after refined captures added
+             */
+            "name": "Shellscript - Better Shellscript - Regexp Set Classes (Basic)",
+            "scope": [
+                "constant.other.character-class.set.regexp.shell"
+            ],
+            "settings": {
+                "foreground": "#0A0",
                 "fontStyle": ""
             }
         },
@@ -1152,6 +1248,217 @@
             "settings": {
                 "foreground": "#D85306"
             }
-        }
+        },
+    /* [0.0.14-15] */
+        /** tmLanguages
+         *  - beginCaptures/captures/endCaptures keys
+         *  INI
+         *  - Scopes for grammar used by extension
+         *  TOML
+         *  - Table keys
+         *  - [0.0.15] Quick fix adding table array keys
+         *  Ruby
+         *  - Function declaration identifiers
+         *  TypeScript/JavaScript
+         *  - Decorators
+         */
+        {   /**
+             * NOTE: tmLanguage related scopes is based on modified fork of
+             * Textmate extension (https://github.com/disco0/vscode-tmlanguage)
+             * and may possibly diverge from original grammar
+             */
+            "scope": [
+                "entity.other.captures.yaml-tmlanguage",
+                "entity.other.captures.json-tmlanguage",
+                // In case this is a thing later
+                "entity.other.captures.tmlanguage",
+            ],
+            "settings": {
+              "foreground": "#1f5279",
+              "fontStyle":  "bold"
+            }
+        },
+        {
+            "scope": "keyword.other.definition.ini",
+            "settings": {
+                "foreground": "#0000DD",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Ruby: Function Name",
+            "scope": "entity.name.function.ruby",
+            "settings": {
+                "foreground": "#CC0000",
+                "fontStyle": "bold"
+            }
+        },
+        /**
+         * For [bracketed.sections] in TOML|INI
+         */
+        {
+            "name": "INI | TOML - Group/Section Title",
+            "scope": [
+                // INI
+                "source.ini entity.name.section.group-title punctuation.definition.entity",
+                "source.ini entity.name.section.group-title",
+            ],
+            "settings": {
+                "foreground": "#C5060B",
+            }
+        },
+        {
+            "name":  "TOML - Array Table",
+            "scope": [
+                // TOML
+                "source.toml meta.array.table.toml variable.key",
+                "source.toml punctuation.definition.array.table.toml",
+              "source.toml meta.array.table punctuation.separator.dot.toml",
+            ],
+            "settings": {
+                "foreground": "#BB0066",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name":  "TOML - Table Key Delimiter",
+            "scope": [
+              "source.toml meta.table.toml punctuation.definition.table.toml",
+              "source.toml meta.table.toml punctuation.separator.dot"
+            ],
+            "settings": {
+                "foreground": "#C5060B",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name":  "TOML - Table Key Variable",
+            "scope": [
+                // TOML
+                "source.toml meta.table.toml variable.key",
+            ],
+            "settings": {
+                "foreground": "#C5060B",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name":  "TOML - Inline Table Variable Key",
+            "scope": [
+              "source.toml variable.key"
+            ],
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#0000A2"
+            }
+        },
+        /**
+         * Typescript decorators
+         * - Semantic highlighting should be shadowing this
+         */
+        // '@' symbol - Not part of semantic capture token
+        {
+            "name": "Typescript / Javascript - Decorator @ Symbol",
+            "scope": "source punctuation.decorator",
+            "settings": {
+                "foreground": "#B90690EE",
+                "fontStyle":  "italic bold"
+            }
+        },
+        // Decorator call parens - Also not in semantic capture
+        {
+            "scope": [
+                "source meta.decorator meta.brace.round",
+            ],
+            "settings": {
+                "foreground": "#000000",
+                "fontStyle": "italic"
+            }
+        },
+        {   // Decorator function body
+            "scope": [
+                "meta.decorator entity.name.function",
+            ],
+            "settings": {
+                "foreground": "#B90690DD",
+                "fontStyle":  "italic"
+            }
+        },
+        // @decoratorVariable
+        {   // Variable Body
+            "scope": [
+                "meta.decorator entity.name.function",
+                "meta.decorator variable.other.readwrite",
+            ],
+            "settings": {
+                "foreground": "#B90690",
+                "fontStyle":  "italic"
+            }
+        },
+    /* [0.0.16] */
+        /** Shellscript
+         *  - Refined regexp captures used in better-shell-syntax's grammar
+         *    extension (used extended sed parsing, etc)
+         *  Regexp
+         *  - Possibly small adjustments in the process of adding shellscript
+         *    regexp styles
+         *  {Java,Type}Script
+         *  _ Regexp literal flags
+         */
+
+        {
+            "name": "Regexp - Set Defintition Characters",
+            "scope": [
+                "constant.other.character-class.set.regexp keyword.operator.negation.regexp",
+                "constant.other.character-class.set.regexp punctuation.definition.character-class.regexp"
+            ],
+            "settings": {
+                "foreground": "#A00",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Regexp - Set Body Characters",
+            "scope": [
+                "constant.other.character-class.set.regexp"
+            ],
+            "settings": {
+                "foreground": "#0C0",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Regexp - Set Body Characters - Class",
+            "scope": [
+                "constant.other.character-class.set.regexp constant.other.character-class.regexp"
+            ],
+            "settings": {
+                "foreground": "#172bc0",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Regexp - Set Body Characters - Escaped",
+            "scope": [
+                "constant.other.character-class.set.regexp constant.character.escape.backslash.regexp"
+            ],
+            "settings": {
+                "foreground": "#A10000",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "{type,java}script Regexp String - Flags",
+            "scope": [
+                "source.ts meta string.regexp keyword.other.js",
+                "source.ts meta string.regexp keyword.other.ts",
+                "source.js meta string.regexp keyword.other.ts",
+                "source.js meta string.regexp keyword.other.js",
+            ],
+            "settings": {
+                "foreground": "#C5060B",
+                "fontStyle": "italic"
+            }
+        },
     ]
 }
