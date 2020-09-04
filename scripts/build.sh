@@ -4,7 +4,7 @@
 local scriptd="${0:a:h}"
 
 # Check for immediate install
-local install=false
+local install && unset install
 if [[ -n "$1" && "$1" == (--install|-i) ]] {
     install=true
 }
@@ -105,7 +105,7 @@ build_extension()
             fi
 
 
-            if { $update } {
+            if (( $+update )) {
                 plog "%F{31}Install flag passed, installing for all code versions%f"
 
                 # Find best executables
