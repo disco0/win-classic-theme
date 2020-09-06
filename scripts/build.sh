@@ -9,7 +9,7 @@ zparseopts -E -D -K -- {i,-install}'=OPT_INSTALL'
 
 build_extension()
 {
-  ### Bootstrap
+  #region Bootstrap
 
     # Normalize environment
     emulate zsh -L
@@ -21,21 +21,35 @@ build_extension()
     local packaged="${based}/packages"
 
 
-  ### Functions
+  #endregion
+  #region Definitions
 
-    plog(){ print -P "%F{240}$@%f" } >/dev/null 1>&2
-    perr(){ print -P "%F{red}$@%f" } >/dev/null 1>&2
+  # Paramter expansion to determine vsce path
+  local vsce_path_expn='${${commands[vsce]}-./node_modules/vsce/out/vsce}'
+
+  #endregion
+  #region Functions
+
+    plog(){ builtin print -Pu2 -- "%F{240}$@%f" }
+    perr(){ builtin print -Pu2 -- "%F{red}$@%f" }
+
+    # vsce in PATH or node_modules
+    vsce_path()
+    {
+        builtin print -r -- "${${commands[vsce]}-./node_modules/vsce/out/vsce}"
+    }
 
     # npm/vsce package check
     vsce_install_check()
     {
         plog "Checking vsce dependency install..."
-        if npm explore vsce --silent
+        local vsce_path="${(e)vsce_path_expn}"
+        if [[ -e $vsce_path ]]
         then
-            plog "\tvsce installed."
+            plog "         vsce installed."
             return 0
         else
-            plog "\tvsce not installed"
+            plog "        %F{1}vsce not install failed.%f"
             return 1
         fi
     }
@@ -91,7 +105,8 @@ build_extension()
         fi
 
         local extension_vsix="$packaged/$name-$version.vsix"
-        if vsce package --out ${extension_vsix}
+        local vsce_path="${(e)vsce_path_expn}"
+        if $=vsce_path package --out ${extension_vsix}
         then
             plog "%F{31}Package created.\n\n > %U%B${packaged}%u%b%f"
             if [ $commands[exa] ]
@@ -132,7 +147,8 @@ build_extension()
     }
 
 
-  ### Setup
+  #endregion
+  #region Setup
 
     # Check for npm
     plog "Checking for npm install..."
@@ -170,6 +186,8 @@ build_extension()
     # Generate package
     plog "%F{31}Creating package...%f"
     package_extension
+
+  #endregion
 }
 
 (){

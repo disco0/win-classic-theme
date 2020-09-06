@@ -12,7 +12,7 @@ vsc-extension-quickstart.md
 
 # node / nvm
 node-modules
-.nvmrc
+.nvm*
 jsconfig.json
 
 # Existing builds
