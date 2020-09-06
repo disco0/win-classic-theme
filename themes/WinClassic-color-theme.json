@@ -1405,7 +1405,6 @@
          *  {Java,Type}Script
          *  _ Regexp literal flags
          */
-
         {
             "name": "Regexp - Set Defintition Characters",
             "scope": [
@@ -1458,6 +1457,47 @@
             "settings": {
                 "foreground": "#C5060B",
                 "fontStyle": "italic"
+            }
+        },
+    /* [0.0.17] */
+        /** Markdown
+         *  - Bold text and delimiters
+         */
+        {
+            "name": "Markdown - Bold Section",
+            "scope": [
+                "markup.bold.markdown"
+            ],
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "Markdown - Bold Italic Section",
+            "scope": [
+                "markup.italic.markdown"
+            ],
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "Markdown - Italic && Bold Section",
+            "scope": [
+                "markup.italic.markdown markup.bold.markdown",
+                "markup.bold.markdown markup.italic.markdown",
+            ],
+            "settings": {
+                "fontStyle": "bold italic"
+            }
+        },
+        {
+            "scope": [
+                "markup.italic.markdown punctuation.definition.bold.markdown"
+            ],
+            "name": "Markdown - Bold|Italic Delimiters",
+            "settings": {
+                "fontStyle": ""
             }
         },
     ]

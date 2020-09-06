@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.17
+
+- __Markdown:__ Styles for bold, italic, and combination
+
 ## 0.0.16
 
 - __Shellscript:__ Refined regexp captures used in better-shell-syntax's grammar extension (used in extended sed parsing, etc)
