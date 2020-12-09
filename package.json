@@ -2,7 +2,8 @@
     "name": "win-classic-theme",
     "displayName": "WinClassic Theme",
     "description": "Windows Classic flavored theme built around MacClassic Theme's color palette",
-    "version": "0.0.17",
+    "version": "0.0.19",
+    "license": "MIT",
     "author": {
         "name": "disk0",
         "url": "https://github.com/disco0"
@@ -11,6 +12,13 @@
     "categories": [
         "Themes"
     ],
+    "scripts": {
+        "build:package": "zsh ./scripts/build.sh",
+        "info:color": "ts-node --project ./scripts/tsconfig.json ./scripts/colorInfo.ts",
+        "preinfo:color": "yarn --ignore-engines info:color:deps",
+        "info:color:deps": "command -v ts-node",
+        "info": "yarn --ignore-engines info:color"
+    },
     "homepage": "https://github.com/disco0/win-classic-theme/blob/master/README.md",
     "repository": {
         "type": "git",
@@ -40,6 +48,17 @@
         "theme"
     ],
     "devDependencies": {
-        "vsce": "^1.66.0"
+        "@tsconfig/node12": "^1.0.7",
+        "@types/chalk": "^2.2.0",
+        "@types/node": "^14.11.10",
+        "chalk": "^4.1.0",
+        "conditional-reduce": "^1.2.0",
+        "jsonc-parser": "^2.3.1",
+        "vsce": "^1.81.1"
+    },
+    "dependencies": {
+        "@types/debug": "^4.1.5",
+        "debug": "^4.2.0",
+        "tsdef": "^0.0.14"
     }
 }
