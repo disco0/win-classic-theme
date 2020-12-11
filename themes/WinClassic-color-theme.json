@@ -1,24 +1,25 @@
 {
     "name": "WinClassic",
     "type": "light",
+    //#region UI
     "colors": {
-		    "activityBar.foreground":                            "#ffffff",
-        "activityBar.background":                            "#D4D0C8",
-		    "activityBar.activeBorder":                          "#ffffff",
-        "activityBar.border":                                "#867E6E",
-		    "activityBar.inactiveForeground":                    "#ffffff66",
-        "activityBar.dropBackground":                        "#C6C2BB",
-		    "activityBarBadge.background":                       "#007acc",
-		    "activityBarBadge.foreground":                       "#ffffff",
+        "activityBar.foreground":                             "#EAE8E8CC",
+        "activityBar.background":                             "#D4D0C8",
 
-        "badge.background":                                   "#CC0000",
-        "badge.foreground":                                   "#EEEEEE",
+        "activityBar.activeBackground":                       "#007ACC",
+        "activityBar.activeBorder":                           "#007ACC",
+        "activityBar.activeFocusBorder":                      "#DDDDDD",
 
-        "editor.foreground":                                  "#000000",
-        "editor.background":                                  "#EFEFEF",
+        "activityBar.border":                                 "#867E6E",
+        "activityBar.dropBorder":                             "#e0dcd4",
 
-        "editor.findMatchBorder":                             "#FFE6BB",
-        "editor.findMatchBackground":                         "#FFE6BBBB",
+        "activityBar.inactiveForeground":                     "#EAE8E8",
+
+        "activityBarBadge.foreground":                        "#EDEDED",
+        "activityBarBadge.background":                        "#007ACC",
+
+        "badge.background":                                   "#C5060B",
+        "badge.foreground":                                   "#EFEFEF",
 
         // Combination of non-opaque background and border causes irregular
         // patterning probably due to line heights? Issue persists even with
@@ -30,7 +31,12 @@
 
         "editor.foldBackground":                              "#4499ff10",
 
+        "editor.background":                                  "#EFEFEF",
+        "editor.foreground":                                  "#000000",
+
         "editor.lineHighlightBackground":                     "#E4E4E490",
+        "editor.lineHighlightBorder":                         "#E4E4E400",
+
         "editor.rangeHighlightBackground":                    "#66BBFF55",
         "editor.selectionBackground":                         "#4499FF55",
 
@@ -45,13 +51,13 @@
         "editorOverviewRuler.border":                        "#C8C8C8",
         "editorOverviewRuler.wordHighlightStrongForeground": "#003E6A",
 
-		    "editorSuggestWidget.border":                        "#c8c8c8",
-		    "editorSuggestWidget.background":                    "#f3f3f3",
+        "editorSuggestWidget.border":                        "#c8c8c8",
+        "editorSuggestWidget.background":                    "#f3f3f3",
         "editorSuggestWidget.foreground":                    "#222",
         "editorSuggestWidget.highlightForeground":           "#000030",
-		    "editorSuggestWidget.selectedBackground":            "#0066ff22",
+        "editorSuggestWidget.selectedBackground":            "#0066ff22",
 
-        "editorWhitespace.foreground":                       "#BFBFBF",
+        "editorWhitespace.foreground":                       "#003E6A18",
 
         "editorWidget.background":                           "#ededed",
         "editorWidget.border":                               "#40404020",
@@ -139,9 +145,10 @@
 
         "titleBar.activeBackground":                          "#D4D0C8",
         "titleBar.activeForeground":                          "#867E6E",
-
-
     },
+    //#endregion UI
+
+    //#region Syntax
     "tokenColors": [
         {
             "name": "Comment",
@@ -657,13 +664,13 @@
             }
         },
 
-    /**
-     * Note: The proceeding version updates only mark when things were added,
-     *       not revised—mostly for recalling after I forget to do the
-     *       changelog immediately
-     */
+      /**
+       * Note: The proceeding version updates only mark when things were added,
+       *       not revised—mostly for recalling after I forget to do the
+       *       changelog immediately
+       */
 
-    /* [0.0.6] */
+      //#region 0.0.6
         /** Javascript
           * Import statements and object literals
           */
@@ -717,7 +724,8 @@
                 "fontStyle": "italic bold"
             }
         },
-    /* [0.0.7] */
+      //#region 0.0.7
+      //#endregion 0.0.7
         /** General
          *  Import Statements
          *  - from | import (to exclusion of more refined scopes)
@@ -742,8 +750,9 @@
                 "foreground": "#1E39F6"
             }
         },
+      //#endregion 0.0.6
 
-    /* [0.0.9] */
+      //#region 0.0.9
         /** JSON
          *  - Property keys now switch between a set of colors for aiding
          *    navigation
@@ -849,8 +858,9 @@
                 "fontStyle": ""
             }
         },
+      //#endregion 0.0.9
 
-    /* [0.0.10-11] */
+      //#region 0.0.10
         /** Stylus
          *  - General scoping details
          */
@@ -982,7 +992,9 @@
                 "foreground": "#0000FF"
             }
         },
-    /* [0.0.11] */
+      //#endregion 0.0.10
+
+      //#region 0.0.11
         /** RegExp
          *  - General scoping for nested contexts
          */
@@ -1192,7 +1204,9 @@
                 "fontStyle": ""
             }
         },
-    /* [0.0.12] */
+      //#endregion 0.0.11
+
+      //#region 0.0.12
         /** JSON-tmLanguage
          *  - Adjustment for questionable top level error scope
          */
@@ -1204,7 +1218,9 @@
                 "fontStyle": ""
             }
         },
-    /* [0.0.13] */
+      //#endregion 0.0.12
+
+      //#region 0.0.13
         /** Log
          *  - Scopes for grammar used by extension
          *  Workbench colors
@@ -1249,7 +1265,8 @@
                 "foreground": "#D85306"
             }
         },
-    /* [0.0.14-15] */
+      //#endregion 0.0.13
+      //#region 0.0.14-15
         /** tmLanguages
          *  - beginCaptures/captures/endCaptures keys
          *  INI
@@ -1262,7 +1279,8 @@
          *  TypeScript/JavaScript
          *  - Decorators
          */
-        {   /**
+        {
+            /**
              * NOTE: tmLanguage related scopes is based on modified fork of
              * Textmate extension (https://github.com/disco0/vscode-tmlanguage)
              * and may possibly diverge from original grammar
@@ -1395,7 +1413,9 @@
                 "fontStyle":  "italic"
             }
         },
-    /* [0.0.16] */
+      //#endregion 0.0.14-15
+
+      //#region 0.0.16
         /** Shellscript
          *  - Refined regexp captures used in better-shell-syntax's grammar
          *    extension (used extended sed parsing, etc)
@@ -1459,7 +1479,9 @@
                 "fontStyle": "italic"
             }
         },
-    /* [0.0.17] */
+      //#endregion 0.0.16
+
+      //#region 0.0.17
         /** Markdown
          *  - Bold text and delimiters
          */
@@ -1500,5 +1522,366 @@
                 "fontStyle": ""
             }
         },
-    ]
+      //#endregion 0.0.17
+
+      //#region 0.0.18
+      /**
+       * CSS
+       * - Selectors
+       * - !important
+       * - Property Values
+       * Markdown
+       * - Raw string
+       * - Quotation
+       * - Quotation begin punctuation
+       * Shellscript
+       * - Subshell definition (fix for better-shellscript-syntax)
+       * - Quoted parameter expansion delimiters / operators - not final color
+       * YAML-tmLanguage
+       * - Control chars
+       * {Java,Type}Script
+       * - Refined documentation comment blocks
+       * - Depreciated
+       * - Nullish coalescing operator
+       * Svelte
+       * - Script tags
+       * Rust
+       * NOTE: Rust has a very poor/unrefined grammar in Code, it (and this theme) need improvement
+       * - Function Declaration (FIXME)
+       * - Attributes
+       * - Operators - :: &
+       * - Attributes
+       * - Core Constants
+       * - Types
+       * - Core Types
+       * - Type parameter
+       * - Raw double quoted
+       *
+       * UI
+       * - Increased contrast of sidebar buttons
+       */
+        {   "scope": "meta.selector.css entity.other.attribute-name.class.css",
+            "settings": {
+                "foreground": "#1E39F6",
+                "fontStyle": ""
+            },
+        },
+        {   "scope": "meta.selector.css entity.other.attribute-name.id.css",
+            "settings": {
+                "foreground": "#CF0E00",
+                "fontStyle": "italic bold"
+            }
+        },
+        {   "scope": "meta.selector.css entity.name.tag.css ",
+            "settings": {
+                "foreground": "#3c4c72",
+                "fontStyle": "underline"
+            }
+        },
+        {   "scope": "entity.other.attribute-name.pseudo-element.css",
+            "settings": {
+                "foreground": "#318495",
+                "fontStyle": "italic bold"
+            }
+        },
+        {   "scope": "keyword.other.important.css",
+            "settings": {
+                "foreground": "#1E39F6",
+                "fontStyle": "italic"
+            }
+        },
+        {   "scope": "meta.property-name.css support.type.property-name.css",
+            "settings": {
+                "foreground": "#0000A2",
+                "fontStyle": ""
+            }
+        },
+        {   "scope": "support.constant.property-value.css",
+            "settings": {
+                "foreground": "#06960E",
+                "fontStyle":   ""
+            }
+        },
+        {   "scope": "markup.inline.raw.string.markdown",
+            "name": "Markdown - Inline Raw/Code",
+            "settings": {
+                "foreground": "#0000A2",
+            }
+        },
+        {   "scope": "markup.quote.markdown",
+            "name": "Markdown - Quotation",
+            "settings": {
+                "foreground": "#000050",
+                "fontStyle":   "italic"
+            }
+        },
+        {   "scope": "punctuation.definition.quote.begin.markdown",
+            "name": "Markdown - Quotation Begin Punctutation",
+            "settings": {
+                "foreground":  "#00F", //  "#06960E",
+                "fontStyle":   "italic bold"
+            }
+        },
+        {   "scope": "meta.scope.subshell punctuation.definition.subshell",
+            "name": "Shellscript - Subshell Parens (zsh Array Fix)",
+            "settings": {
+                "foreground":  "#145",
+                "fontStyle": ""
+            }
+        },
+        {   "scope": [
+                //$
+                "source.shell string.quoted.double.shell punctuation.definition.variable punctuation.section.bracket.curly.variable.begin.shell",
+                // {
+                "source.shell string.quoted.double.shell punctuation.section.bracket.curly.variable.begin.shell",
+                // }
+                "source.shell string.quoted.double.shell punctuation.section.bracket.curly.variable.end.shell",
+            ],
+            "name": "Shellscript - Quoted Parameter Delimiters (${ ... })",
+            "settings": {
+                "foreground": "#B90690",
+                "fontStyle": ""
+            }
+        },
+        {   "scope": [
+                "source.shell string.quoted.double.shell keyword.operator.expansion.shell",
+            ],
+            "name": "Shellscript - Quoted Parameter Expansion Operator (${... ':' ...})",
+            "settings": {
+                "foreground": "#B9069080",
+                "fontStyle": ""
+            }
+        },
+        {   "scope": [
+                "source.yaml-tmlanguage entity.other.control.anchors.regexp",
+                "source.yaml-tmlanguage constant.character.escape.special.regexp"
+            ],
+            "name": "YAML-tmLanguage - Control Chars (\\b, etc)",
+            "settings": {
+                "foreground": "#26B31A",
+                "fontStyle": "bold"
+            }
+
+        },
+        {   "scope": [
+                "comment.block.documentation.ts markup.fenced_code.block punctuation.definition.markdown",
+                "comment.block.documentation.js markup.fenced_code.block punctuation.definition.markdown",
+            ],
+            "name": "(Java|Type)Script - Documentation Comment Code Block Delimiter",
+            "settings": {
+                "foreground": "#408CFF",
+                "fontStyle": ""
+            }
+        },
+        {   "scope": [
+                "comment.block.documentation.ts markup.fenced_code.block",
+                "comment.block.documentation.js markup.fenced_code.block",
+            ],
+            "name": "(Java|Type)Script - Documentation Comment Code Block",
+            "settings": {
+                "foreground": "#222",
+                "fontStyle": ""
+            }
+        },
+        {   "scope": [
+                "comment.block.documentation.ts markup.fenced_code.block fenced_code.block.language.markdown",
+                "comment.block.documentation.js markup.fenced_code.block fenced_code.block.language.markdown",
+            ],
+            "name": "(Java|Type)Script - Documentation Comment Code Block Language Identifier",
+            "settings": {
+                "foreground": "#06A",
+                "fontStyle": "italic bold"
+            }
+        },
+        {   "scope": [
+                "comment.block.documentation.ts markup.fenced_code.block meta.objectliteral",
+                "comment.block.documentation.js markup.fenced_code.block meta.objectliteral",
+            ],
+            "name": "(Java|Type)Script - Documentation Comment Code Block Object Literal (Patch for weird scope when open bracket is on new line)",
+            "settings": { "foreground": "#318495", "fontStyle": "" }
+        },
+        {   "scope": [
+                "source.svelte source.js entity.name.label.js",
+                "source.svelte source.ts entity.name.label.ts",
+            ],
+            "name": "Svelte - Script Tags (? TODO: Confirm)",
+            "settings": {
+                "foreground": "#E00",
+                "fontStyle": "bold"
+            }
+        },
+        {   "scope": [
+                "source.ts meta.namespace.declaration storage.type.internaldeclaration punctuation.decorator.internaldeclaration",
+                "source.ts meta.namespace.declaration storage.type.internaldeclaration",
+                "source.js meta.namespace.declaration storage.type.internaldeclaration punctuation.decorator.internaldeclaration",
+                "source.js meta.namespace.declaration storage.type.internaldeclaration",
+            ],
+
+            "name": "{Type,Java}Script - Depreciated Document Comment Tag",
+
+            "settings": {
+                "foreground": "#B90690",
+                "fontStyle":    "italic bold"
+            }
+        },
+        {   "scope": [
+                "source.ts punctuation.accessor.optional.ts",
+                "source.js punctuation.accessor.optional.js"
+            ],
+            "name": "{Type,Java}Script - ?.",
+            "settings": {
+                "foreground": "#B90690",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "Rust - Attributes",
+            "scope":
+            [
+                "source.rust meta.attribute.rust"
+            ],
+            "settings": {
+              // "foreground": "#BB0066",
+              "foreground": "#029A",
+              "fontStyle": ""
+            }
+        },
+        {
+            "name": "Rust - Function Declaration - Name",
+            /**
+             * TODO: Rust grammar is really simple - this not only doesn't just highlight
+             *       function declarations, but also highlights METHODS
+             */
+            "scope":
+            [
+                "source.rust entity.name.function.rust"
+            ],
+            "settings": {
+              "foreground": "#C00",
+              "fontStyle": ""
+            }
+        },
+        {
+            "name": "Rust - Operator (Intended for `::`)",
+            "scope":
+            [
+                "source.rust keyword.operator.misc"
+            ],
+            "settings": {
+              "foreground": "#118",
+              "fontStyle": ""
+            }
+        },
+        {
+            "name": "Rust - Sigil Operator (`&`) ",
+            "scope":
+            [
+                "source.rust keyword.operator.sigil.rust"
+            ],
+            "settings": {
+              "foreground": "#00D",
+              "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "Rust - Type ",
+            "scope":
+            [
+                "source.rust entity.name.type"
+            ],
+            "settings": {
+              "foreground": "#D00",
+              "fontStyle": "underline"
+            }
+        },
+        {
+            "name": "Rust - Type Parameter ({FuncName}<{Type Param}>)",
+            "scope":
+            [
+                "source.rust meta.type_params"
+            ],
+            "settings": {
+              "foreground": "#D00",
+              /**
+              * Builtin grammar captures entire body of parameter expression `< ... >` instead
+              * of just the actual tokens, e.g. <`Token`>. Readd underline when grammar improves
+              */
+              "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "Rust - Type - Core",
+            "scope":
+            [
+                "source.rust storage.type.core"
+            ],
+            "settings": {
+              "foreground": "#00D",
+              "fontStyle": "underline bold"
+            }
+        },
+        {
+            "name": "Rust - Constants - Core (`Err`, `Ok`, etc.)",
+            "scope":
+            [
+                "source.rust support.constant.core.rust"
+            ],
+            "settings": {
+              "foreground": "#C00",
+              "fontStyle": "bold underline"
+            }
+        },
+        {
+            "name": "Rust - Raw Double Quoted (`r# ... #`)",
+            "scope":
+            [
+                "source.rust string.quoted.double.raw.rust"
+            ],
+            "settings": {
+                "foreground": "#038A07"
+            }
+        },
+      //#endregion 0.0.18
+
+      //#region 0.0.19
+      /**
+       * TS/JS
+       * - Tuple Element Labels
+       * - Super variable identifier
+       * UI
+       * - Made active sidebar icon background solid
+       * - Fixed any regressions that may or may not have been caused by using the
+       *   global user settings to modify themes
+       */
+        {
+            "name": "TypeScript Tuple Element Name",
+            "scope": [
+                "source.ts meta.type.declaration meta.type.tuple entity.name.label",
+            ],
+            "settings": {
+                "foreground": "#318495",
+                "fontStyle": "italic underline"
+            }
+        },
+        {
+            "name": "{Type,Java}script - `super`",
+            "scope": [
+              "source.ts variable.language.super",
+              "source.js variable.language.super",
+            ],
+            "settings": {
+              "foreground": "#CC0000",
+              "fontStyle": "italic underline"
+            }
+        }
+
+      //#endregion 0.0.19
+    ],
+
+    /** TypeScript
+     *  - Semantic Highlighting
+     */
+    "semanticTokenColors": {
+
+    }
 }
