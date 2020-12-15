@@ -17,7 +17,7 @@ function g() {
 class C {
     @f()
     @g()
-    method() {}
+    methodName() {}
 }
 
 // Class decorators
