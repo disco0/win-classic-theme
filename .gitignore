@@ -13,9 +13,11 @@ node_modules
 vsc-extension-quickstart.md
 .vscode-test/
 
-# nvm
+# n{v,p}m uarn
 .nvm-node
 .nvmrc
+package-lock.json
+yarn.lock
 
 # Theme stuff
 .currentSettingsTheme.json
