@@ -16,3 +16,6 @@ vsc-extension-quickstart.md
 # nvm
 .nvm-node
 .nvmrc
+
+# Theme stuff
+.currentSettingsTheme.json
