@@ -1843,7 +1843,7 @@
         },
       //#endregion 0.0.18
 
-      //#region 0.0.19
+      //#region 0.0.19-20
       /**
        * TS/JS
        * - Tuple Element Labels
@@ -1856,10 +1856,14 @@
         {
             "name": "TypeScript Tuple Element Name",
             "scope": [
+                // Original strict scope
+                // "source.ts meta.type.declaration meta.type.tuple entity.name.label",
                 "source.ts meta.type.declaration meta.type.tuple entity.name.label",
+                // Fix for annotations in class members, etc
+                "source.ts meta.type.annotation meta.type.tuple entity.name.label",
             ],
             "settings": {
-                "foreground": "#318495",
+                "foreground": "#C00",
                 "fontStyle": "italic underline"
             }
         },
@@ -1875,7 +1879,7 @@
             }
         }
 
-      //#endregion 0.0.19
+      //#endregion 0.0.19-20
     ],
 
     /** TypeScript

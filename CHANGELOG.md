@@ -1,5 +1,58 @@
 # Change Log
 
+## 0.0.20
+
+- __TS/JS__:
+    - Tuple Element Labels - Refined scope && color
+
+## 0.0.19
+
+- __TS/JS__:
+    - Tuple Element Labels
+    - `super` keyword
+
+- __UI__:
+    - Increased contrast on active activity bar item
+
+## 0.0.18
+
+- __CSS__:
+    - Selectors
+    - `!important`
+    - Property Values
+
+- __Markdown__:
+    - Raw string
+    - Quotation
+    - Quotation begin punctuation
+
+- __Shellscript__:
+    - Subshell definition (fix for better-shellscript-syntax)
+    - Quoted parameter expansion delimiters / operators (not final color)
+
+- __YAML-tmLanguage__:
+    - Control chars
+
+- __{Java,Type}Script__:
+    - Refined documentation comment blocks
+    - Depreciated
+    - Nullish coalescing operator
+
+- __Svelte__:
+    - Script tags
+
+- __Rust__:
+    - Note—Rust has a very poor/unrefined grammar in Code, it (and this theme) need improvement
+    - Function Declaration (FIXME)
+    - Attributes
+    - Operators - `::` `&`
+    - Attributes
+    - Core Constants
+    - Types
+    - Core Types
+    - Type parameter
+    - Raw double quoted
+
 ## 0.0.17
 
 - __Markdown:__ Styles for bold, italic, and combination
