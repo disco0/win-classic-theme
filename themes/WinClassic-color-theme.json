@@ -1843,7 +1843,7 @@
         },
       //#endregion 0.0.18
 
-      //#region 0.0.19-20
+      //#region 0.0.19-21
       /**
        * TS/JS
        * - Tuple Element Labels
@@ -1858,9 +1858,15 @@
             "scope": [
                 // Original strict scope
                 // "source.ts meta.type.declaration meta.type.tuple entity.name.label",
-                "source.ts meta.type.declaration meta.type.tuple entity.name.label",
+
                 // Fix for annotations in class members, etc
-                "source.ts meta.type.annotation meta.type.tuple entity.name.label",
+                // "source.ts meta.type.annotation meta.type.tuple entity.name.label",
+
+                // Fix for annotations in return type
+                // "source.ts meta.return.type meta.type.tuple entity.name.label",
+
+                // Fuck it fix that will probably need another fix
+                "source.ts meta meta.type.tuple entity.name.label",
             ],
             "settings": {
                 "foreground": "#C00",
@@ -1879,7 +1885,7 @@
             }
         }
 
-      //#endregion 0.0.19-20
+      //#endregion 0.0.19-21
     ],
 
     /** TypeScript
