@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.21
+
+- __TS/JS__:
+    - Tuple Element Labels - Fool me twice
+
 ## 0.0.20
 
 - __TS/JS__:
