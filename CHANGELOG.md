@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.0.22
+
+- __Editor__:
+    - Fixed editor suggestion colors
+    - Symbol and symbol reference highlight/emphasis
+
 ## 0.0.21
 
 - __TS/JS__:
