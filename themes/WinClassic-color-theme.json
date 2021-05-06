@@ -64,10 +64,12 @@
         "editorSuggestWidget.focusHighlightForeground":      "#003E6A",
 
         // Used for other binding sites of currently hovered symbol
+        // EDIT: Nevermind, its exactly what the description says lol
         "editor.wordHighlightStrongBorder":                  "#4499FF00",
         "editor.wordHighlightStrongBackground":              "#4499FF55",
 
         // Used for other currently hovered symbol
+        // EDIT: Nevermind, its exactly what the description says lol
         "editor.wordHighlightBackground":                    "#44AAFF40",
         "editor.wordHighlightBorder":                        "#003E6A40",
 
@@ -160,7 +162,7 @@
         "titleBar.activeBackground":                         "#D4D0C8",
         "titleBar.activeForeground":                         "#867E6E",
     },
-    //#Endregion UI
+    //#endregion UI
 
     //#region Syntax
     "tokenColors": [
@@ -739,7 +741,7 @@
             }
         },
       //#region 0.0.7
-      //#Endregion 0.0.7
+      //#endregion 0.0.7
         /** General
          *  Import Statements
          *  - from | import (to exclusion of more refined scopes)
@@ -764,7 +766,7 @@
                 "foreground": "#1E39F6"
             }
         },
-      //#Endregion 0.0.6
+      //#endregion 0.0.6
 
       //#region 0.0.9
         /** JSON
@@ -872,7 +874,7 @@
                 "fontStyle": ""
             }
         },
-      //#Endregion 0.0.9
+      //#endregion 0.0.9
 
       //#region 0.0.10
         /** Stylus
@@ -1006,7 +1008,7 @@
                 "foreground": "#0000FF"
             }
         },
-      //#Endregion 0.0.10
+      //#endregion 0.0.10
 
       //#region 0.0.11
         /** RegExp
@@ -1218,7 +1220,7 @@
                 "fontStyle": ""
             }
         },
-      //#Endregion 0.0.11
+      //#endregion 0.0.11
 
       //#region 0.0.12
         /** JSON-tmLanguage
@@ -1232,7 +1234,7 @@
                 "fontStyle": ""
             }
         },
-      //#Endregion 0.0.12
+      //#endregion 0.0.12
 
       //#region 0.0.13
         /** Log
@@ -1279,7 +1281,7 @@
                 "foreground": "#D85306"
             }
         },
-      //#Endregion 0.0.13
+      //#endregion 0.0.13
       //#region 0.0.14-15
         /** tmLanguages
          *  - beginCaptures/captures/endCaptures keys
@@ -1427,7 +1429,7 @@
                 "fontStyle":  "italic"
             }
         },
-      //#Endregion 0.0.14-15
+      //#endregion 0.0.14-15
 
       //#region 0.0.16
         /** Shellscript
@@ -1493,7 +1495,7 @@
                 "fontStyle": "italic"
             }
         },
-      //#Endregion 0.0.16
+      //#endregion 0.0.16
 
       //#region 0.0.17
         /** Markdown
@@ -1536,7 +1538,7 @@
                 "fontStyle": ""
             }
         },
-      //#Endregion 0.0.17
+      //#endregion 0.0.17
 
       //#region 0.0.18
       /**
@@ -1855,7 +1857,7 @@
                 "foreground": "#038A07"
             }
         },
-      //#Endregion 0.0.18
+      //#endregion 0.0.18
 
       //#region 0.0.19-21
       /**
@@ -1897,9 +1899,684 @@
               "foreground": "#CC0000",
               "fontStyle": "italic underline"
             }
-        }
+        },
 
-      //#Endregion 0.0.19-21
+      //#endregion 0.0.19-21
+
+
+      //#region 0.0.22
+      /**
+       * GitConfig
+       * - Config Section Entry Name
+       * - Config Section
+       * - Config Section
+       * - Config Section Delimiters
+       * Python
+       * Lua
+       * - Table properties
+       * - Function Identifier
+       * - Emmylua Documentation Comments
+       */
+
+        //#region GitConfig
+
+          {   "name": "GitConfig - Config Section Entry Name",
+              "scope": [
+                  "text.gitconfig meta.section.header.gitconfig entity.name.section"
+              ],
+              "settings": {
+                  "foreground": "#C5060B",
+                  "fontStyle": "italic bold"
+              }
+          },
+
+          {   "name": "GitConfig - Config Section",
+              "scope": [
+                  "text.gitconfig meta.section.header.gitconfig"
+              ],
+              "settings": {
+                  "foreground": "#C5060B",
+                  "fontStyle": ""
+              }
+          },
+
+          {   "name": "GitConfig - Config Section Delimiters",
+              "scope": [
+                    "text.gitconfig meta.section.header.gitconfig punctuation.section.brace.bracket.square.begin.gitconfig",
+                    "text.gitconfig meta.section.header.gitconfig punctuation.section.brace.bracket.square.end.gitconfig"
+              ],
+              "settings": {
+                  "foreground": "#C5060B"
+              }
+          },
+
+        //#endregion GitConfig
+
+        //#region Python
+
+          {   "name": "Python - Docstring Body",
+              "scope":
+              [
+                  "source.python string.quoted.double.block.python"
+              ],
+              "settings": {
+                  "foreground": "#036A07A0",
+                  "fontStyle": ""
+              }
+          },
+
+          {   "name": "Python - Docstring Delimiters (`\"\"\"`)",
+              "scope":
+              [
+                  "source.python string.quoted.double.block.python punctuation.definition.string.begin",
+                  "source.python string.quoted.double.block.python punctuation.definition.string.end",
+              ],
+              "settings": {
+                  "foreground": "#036A0780",
+                  "fontStyle": ""
+              }
+          },
+
+        //#endregion Python
+
+        //#region YAML-tmLanguage
+
+          // TODO: Flesh out
+
+          //#region YAML-tmLanguage - Top Level Keywords
+
+          {
+              "name": "YAML-tmLanguage - Top Level `name`",
+              "scope": [
+                  "source.yaml-tmlanguage meta.name-main.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage keyword.other.name.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#0000CC",
+                  "fontStyle": "bold"
+              }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Top Level `name` - Delimiter `:`",
+              "scope": [
+                  "source.yaml-tmlanguage meta.name-main.yaml-tmlanguage keyword.control.definition.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#0000CCAA"
+              }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Grammar Identifier",
+              "scope": [
+                  "source.yaml-tmlanguage meta.name-main.yaml-tmlanguage entity.other.name.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#0000FF",
+                  "fontStyle": "bold underline"
+              }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Top Level `repository`",
+              "scope": [
+                  "source.yaml-tmlanguage meta.repository-block.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage entity.other.repository.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#0000CC",
+                  "fontStyle": "bold"
+              }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Top Level `repository` - Delimiter `:`",
+              "scope": [
+                  "source.yaml-tmlanguage meta.repository-block.yaml-tmlanguage keyword.control.definition.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#0000CCAA"
+              }
+          },
+
+          //#endregion YAML-tmLanguage - Top Level Keywords
+
+          //#region YAML-tmLanguage - Repository Keywords
+
+          {
+              "name": "YAML-tmLanguage - Pattern Property Keyword - `pattern`",
+              "scope": [
+                  "source.yaml-tmlanguage meta.include.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage keyword.other.include.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#AA0088",
+                  "fontStyle": "italic"
+              }
+          },
+          {
+              "name": "YAML-tmLanguage - Pattern Property Delimiter",
+              "scope": [
+                  "source.yaml-tmlanguage meta.include.yaml-tmlanguage keyword.control.definition.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#AA0088AA",
+                  "fontStyle": "italic"
+              }
+          },
+
+          //#endregion YAML-tmLanguage - Repository Keywords
+
+          //#region YAML-tmLanguage - etc
+
+          {
+              "name": "YAML-tmLanguage - Include `#`",
+              "scope":
+              [
+                  "source.yaml-tmlanguage meta.include.yaml-tmlanguage meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage",
+                  "source.yaml-tmlanguage meta.include.yaml-tmlanguage meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage variable.other.include.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#CC000033",
+                  "fontStyle": ""
+              }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Include Identifier",
+              "scope":
+              [
+                  "source.yaml-tmlanguage meta.include.yaml-tmlanguage meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage variable.other.include.yaml-tmlanguage"
+              ],
+              "settings": {
+                  "foreground": "#CC0000",
+                  "fontStyle": "bold"
+              }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Quoted Match String Quotation Marks",
+              "scope":
+              [
+                  "source.yaml-tmlanguage meta.repository-block.yaml-tmlanguage meta.match.yaml-tmlanguage punctuation.definition.string.yaml-tmlanguage"
+              ],
+              "settings": { "foreground": "#036A07" }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Quoted Include Quotation Marks",
+              "scope":
+              [
+
+                  "source.yaml-tmlanguage meta.include.yaml-tmlanguage meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage punctuation.definition.string.yaml-tmlanguage"
+              ],
+              "settings": { "foreground": "#036A07" }
+          },
+
+          {
+              "name": "YAML-tmLanguage - Unquoted Scope Name",
+              "scope":
+              [
+                  "source.yaml-tmlanguage meta.repository-block.yaml-tmlanguage meta.name.yaml-tmlanguage meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage"
+              ],
+              "settings": { "foreground": "#000088" }
+          },
+
+          // NOTE: Instead use lightened color from relevant adjacent scope
+          // {
+          //     "name": "YAML-tmLanguage - `:` Property-Value Delimiter",
+          //     "scope":
+          //     [
+          //         "source.yaml-tmlanguage meta keyword.control.definition.yaml-tmlanguage"
+          //     ],
+          //     "settings": { "foreground": "#0000CC" }
+          // }
+
+          //#endregion YAML-tmLanguage - etc
+
+        //#endregion YAML-tmLanguage
+
+        //#region Go
+
+          {
+              "name": "Go - Format String Expression",
+              "scope": [ "constant.other.placeholder.go" ],
+              "settings": {
+                  "foreground": "#CC0000",
+                  "fontStyle": "bold italic"
+              }
+          },
+
+        //#endregion Go
+
+        //#region Powershell
+
+          {
+              "name": "Powershell - Operator",
+              "scope": ["source.powershell meta.hashtable.powershell meta.scriptblock.powershell keyword.operator.assignment.powershell"],
+              "settings": {
+                  "foreground": "#000088",
+                  "fontStyle": "bold"
+              }
+          },
+
+          {
+              "name": "Powershell - Bracket Punctuation",
+              "scope":
+              [
+                "source.powershell punctuation.section.bracket.end.powershell",
+                "source.powershell punctuation.section.bracket.begin.powershell",
+              ],
+              "settings": {
+                  // "foreground": "#C00",
+                  // Returned to this as scopes target anything brackets, not just type brackets
+                  "foreground": "#444",
+              }
+          },
+
+          {
+              "name": "Powershell - Pipeline `|`, Continuation `\\``",
+              "scope":
+              [
+                "source.powershell keyword.operator.other.powershell"
+              ],
+              "settings": {
+                  // "foreground": "#C00",
+                  // Returned to this as scopes target anything brackets, not just type brackets
+                  "foreground": "#005",
+                  "fontStyle": ""
+              }
+          },
+
+        //#endregion Powershell
+
+        //#region {Type,Java}Script
+
+          {   "name": "JavaScript - Import Namespace Identifier",
+              "scope":
+              [
+                "meta.import.js variable.other.readwrite.alias.js",
+                "meta.import.jsx variable.other.readwrite.alias.jsx"
+              ],
+              "settings": {
+                  "foreground": "#D00",
+                  "fontStyle": "italic bold"
+              }
+          },
+
+          {   "name": "JavaScript - Import Member Identifier",
+              "scope":
+              [
+                "meta.import.js meta.block.js variable.other.readwrite.alias.js",
+                "meta.import.jsx meta.block.js variable.other.readwrite.alias.jsx",
+              ],
+              "settings": {
+                  "foreground": "#03D",
+                  "fontStyle": "italic bold"
+              }
+          },
+
+          // The proceeding scopes were added specifically for markdown embedded source
+          {   "name": "{Java,Type}Script - Inherited Class Ident",
+              "scope":
+              [
+                  "meta.class.ts entity.other.inherited-class.ts",
+                  "meta.class.tsx entity.other.inherited-class.tsx",
+                  "meta.class.js entity.other.inherited-class.js",
+                  "meta.class.jsx entity.other.inherited-class.jsx",
+              ],
+              "settings":
+              {
+                  "foreground": "#CF0E00",
+                  "fontStyle": "underline italic"
+              }
+          },
+
+          {   "name": "{Java,Type}Script - `this` Keyword/Object",
+              "scope":
+              [
+                  "markup.fenced_code.block variable.language.this.ts",
+                  "markup.fenced_code.block variable.language.this.tsx",
+                  "markup.fenced_code.block variable.language.this.js",
+                  "markup.fenced_code.block variable.language.this.jsx"
+              ],
+              "settings":
+              {
+                  "foreground": "#0000C0",
+                  "fontStyle": "bold italic"
+              }
+          },
+
+        //#endregion {Type,Java}Script
+
+        //#region Markdown
+
+          {   "name": "Markdown - Fenced Codeblock Delimiters",
+              "scope":
+              [
+                  "markup.fenced_code.block.markdown punctuation.definition.markdown"
+              ],
+              "settings": {
+                  // Using Generic escape color from ecmascript regexp
+                  "foreground": "#26B31A",
+                  "fontStyle": "bold"
+              }
+          },
+
+          {   "name": "Markdown - Fenced Codeblock Language Identifier",
+              "scope":
+              [
+                  "markup.fenced_code.block.markdown fenced_code.block.language.markdown"
+              ],
+              "settings": {
+                  // Using Generic escape color from ecmascript regexp
+                  "foreground": "#E18AC7",
+                  "fontStyle": "italic underline"
+              }
+          },
+
+        //#endregion Markdown
+
+        //#region Powershell
+
+          {   "name": "PowerShell - Embedded Blocks",
+              "scope":
+              [
+                "source.powershell meta.embedded"
+              ],
+              "settings":
+              {
+                "foreground": "#555555",
+                "fontStyle": ""
+              }
+          },
+
+        //#endregion Powershell
+
+        //#region bats
+
+          {
+              "scope": "keyword.control.bats",
+              "settings": {
+                  "foreground": "#DD0099",
+                  "fontStyle": "bold underline italic"
+              }
+          },
+          {
+              "scope": "support.function.bats",
+              "settings": {
+                  "foreground": "#d41515",
+                  "fontStyle": "italic"
+              }
+          },
+          {
+              "scope": "support.variable.bats",
+              "settings": {
+                  "foreground": "#DD0000",
+                  "fontStyle": "italic"
+              }
+          },
+          {   "scope": "source.m4 meta.scope.logical-expression.shell",
+              "settings":
+              {
+                  "foreground": "#CC2222",
+                  "fontStyle": "italic"
+              }
+          },
+          {   "scope": "source.m4 punctuation.definition.logical-expression.shell",
+              "settings":
+              {
+                  "foreground": "#AA0000",
+                  "fontStyle": "bold"
+              }
+          },
+
+        //#endregion bats
+
+        //#region Shellscript
+
+          {
+              "name": "Shellscript - Test Brackets (`[[` && `]]`), other Logical Expressions",
+              "scope":
+              [
+                  "source.shell punctuation.definition.logical-expression.shell"
+              ],
+              "settings":
+              {
+                "foreground": "#CC0000",
+                "fontStyle": "bold"
+              }
+          },
+
+          {
+              "name": "Shellscript - Command Option Flags",
+              "scope":
+              [
+                  "source.shell constant.other.option.shell",
+                  "source.shell constant.other.option.dash.shell",
+              ],
+              "settings":
+              {
+                "foreground": "#0000AA",
+                "fontStyle": ""
+              }
+          },
+
+          {
+              "name": "Shellscript - Parameter Expansion Operator",
+              "scope":
+              [
+                  "source.shell keyword.operator.expansion.shell",
+              ],
+              "settings":
+              {
+                "foreground": "#CC0000",
+                "fontStyle": ""
+              }
+          },
+
+          {
+              "name": "Shellscript - Parameter Delimiters",
+              "scope":
+              [
+                  "source.shell punctuation.section.bracket.curly.variable.begin",
+                  "source.shell punctuation.section.bracket.curly.variable.end",
+              ],
+              "settings":
+              {
+                "foreground": "#AA0000",
+                "fontStyle": "bold"
+              }
+          },
+
+        //#endregion Shellscript
+
+        //#region Go
+
+          {   "name": "Go - Punctuation - Period",
+              "scope":
+              [
+                  "source.go punctuation.other",
+                  "source.go punctuation.definition.begin",
+                  "source.go punctuation.definition.end",
+              ],
+              "settings": {
+                  "foreground": "#0000CC",
+                  "fontStyle": ""
+              }
+          },
+          {   "name": "Go - Punctuation - Brackets",
+              "scope":
+              [
+                  "source.go punctuation.definition.begin",
+                  "source.go punctuation.definition.end",
+              ],
+              "settings": {
+                  "foreground": "#000088",
+                  "fontStyle": ""
+              }
+          },
+          {   "name": "Go - Function",
+              "scope":
+              [
+                  "source.go support.function",
+              ],
+              "settings": {
+                  "foreground": "#CC0000",
+                  "fontStyle": ""
+              }
+          },
+          {   "name": "Go - (Quoted) Import Path",
+              "scope":
+              [
+                  "source.go entity.name.import",
+              ],
+              "settings": {
+                  "foreground": "#0000FF",
+                  "fontStyle": "underline"
+              }
+          },
+
+        //#endregion Go
+
+        //#region C#
+
+          {   "name": "C# - Null Conditional Operator",
+              "scope":
+              [
+                  "keyword.operator.null-conditional.cs"
+              ],
+              "settings": {
+                  "foreground": "#B90690",
+                  "fontStyle": "italic bold"
+              }
+
+          },
+
+        //#endregion C#
+
+        //#region CSS
+
+          {   "name": "CSS - Variable Declaration",
+              "scope":
+              [
+                  "variable.css"
+              ],
+              "settings": {
+                  "foreground": "#AA0000",
+                  // "foreground": "#318495",
+                  "fontStyle": "italic"
+              }
+          },
+
+          {   "name": "CSS - Variable Reference",
+              "scope":
+              [
+                  "variable.argument.css"
+              ],
+              "settings": {
+                  "foreground": "#318495",
+              }
+          },
+
+        //#endregion CSS
+
+        //#region Lua
+
+          {   "name": "Lua - Emmylua Alias Definition - Alias Identifier",
+              "scope":
+              [
+                  "comment.line.double-dash.lua variable.lua"
+              ],
+              "settings":
+              {
+                  "foreground": "#CC0000",
+                  "fontStyle": "underline"
+              }
+          },
+
+          {   "name": "Lua - Emmylua Generic Declaration - Identifier",
+              "scope":
+              [
+                  "comment.line.double-dash.lua storage.type.generic.lua"
+              ],
+              "settings":
+              {
+                  "foreground": "#CC0000",
+                  "fontStyle": "bold underline"
+              }
+          },
+
+          {   "name": "Lua - Emmylua Definition - Parameter Identifier",
+              "scope":
+              [
+                  "comment.line.double-dash.lua entity.name.variable.lua"
+              ],
+              "settings":
+              {
+                  "foreground": "#318495",
+                  "fontStyle": "italic"
+              }
+          },
+
+          {   "name": "Lua - Emmylua Definition - Keyword (`fun`, `|`, etc.)",
+              "scope":
+              [
+                  "comment.line.double-dash.lua keyword"
+              ],
+              "settings":
+              {
+                  "foreground": "#0000DDCC",
+                  "fontStyle": ""
+              }
+          },
+
+        //#endregion Lua
+
+        {   "name": "Lua - Table Property",
+            "scope":
+            [
+                "variable.other.table.property.lua"
+            ],
+            "settings":
+            {
+                "fontStyle": "italic bold",
+                "foreground": "#1545ac"
+            }
+        },
+        {   "name": "Lua - Table Function Property",
+            "scope":
+            [
+                "entity.name.function"
+            ],
+            "settings":
+            {
+                "fontStyle": "bold",
+                "foreground": "#D51015"
+            }
+        },
+        {   "name": "Lua - Function Identifier",
+            "scope":
+            [
+                "meta.function-call.lua entity.name.function"
+            ],
+            "settings":
+            {
+                "fontStyle": "bold",
+                "foreground": "#1f41b1"
+            }
+        },
+        {   "name": "Lua - EmmyLua Alias - Identifier",
+            "scope":
+            [
+                "comment.line.double-dash variable.lua"
+            ],
+            "settings":
+            {
+                "foreground": "#CC0000",
+                "fontStyle": "bold underline"
+            }
+        },
+
+      //#endregion 0.0.22
     ],
 
     /** TypeScript
