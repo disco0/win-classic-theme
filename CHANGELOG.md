@@ -3,8 +3,178 @@
 ## 0.0.22
 
 - __Editor__:
+
     - Fixed editor suggestion colors
+    - Fixed quick input colors
     - Symbol and symbol reference highlight/emphasis
+
+- __Semantic Tokens__:
+
+    - __Global__:
+        - `comment`
+        - `class`
+        - `keyword`
+        - `variable.defaultLibrary.readonly`
+
+    - __Powershell__:
+        - `type`
+        - `*.language`
+        - `property`
+        - `variable`
+        - `variable.other.readwrite`
+        - `function`
+        - `operator`
+        - `number`
+
+    - __CSharp__:
+        - `namespace`
+        - `plainKeyword`
+        - `controlKeyword`
+        - `enum`
+        - `enumMember`
+        - `operator`
+        - `parameter`
+        - `property`
+        - `member`
+        - `member.static`
+        - `field`
+        - `local`
+        - `local.declaration`
+        - `preprocessorText`
+        - `preprocessorKeyword`
+        - `xmlDocCommentComment`
+        - `xmlDocCommentName`
+        - `xmlDocCommentAttributeName`
+        - `xmlDocCommentDelimiter`
+        - `xmlDocCommentText`
+
+    - __Python__:
+        - `intrinsic`
+        - `selfParameter`
+        - `function`
+        - `function.declaration`
+        - `module`
+
+    - __Rust__:
+        - `operator`
+        - `variable.static.constant`
+        - `lifetime`
+        - `function.attribute`
+        - `namespace`
+        - `comment.documentation`
+        - `formatSpecifier`
+        - `*.intraDocLink`
+        - `brace.injected`
+        - `parenthesis.injected`
+        - `semicolon.injected`
+        - `comma.injected`
+        - `angle.injected`
+        - `punctuation.injected`
+        - `generic.injected`
+        - `operator.injected`
+
+    - __Go__:
+        - `namespace`
+        - `operator`
+        - `parameter`
+        - `parameter.definition`
+        - `*.definition`
+        - `type.definition`
+        - `function`
+        - `function.definition`
+
+    - __C__:
+        - `property`
+        - `variable`
+        - `variable.local`
+        - `variable.global`
+        - `namespace`
+        - `preprocessorText`
+        - `preprocessorKeyword`
+        - `enumMember`
+        - `macro`
+        - `memberOperatorOverload`
+
+    - __Cpp__:
+        - `namespace`
+        - `preprocessorText`
+        - `preprocessorKeyword`
+        - `enumMember`
+        - `macro`
+        - `memberOperatorOverload`
+
+    - __typescript__:
+        - `namespace`
+        - `enum`
+
+- __TextMate Scopes__:
+
+    - __GitConfig__:
+        - Config Section Entry Name
+        - Config Section
+        - Config Section
+        - Config Section Delimiters
+
+    - __Python__:
+        - Docstring Body
+        - Docstring Delimiters (`"""`)
+
+    - __YAML-tmLanguage__
+        - Control Chars (, etc)
+        - Top Level `name`
+        - Top Level `name` - Delimiter `:`
+        - Grammar Identifier
+        - Top Level `repository`
+        - Top Level `repository` - Delimiter `:`
+        - Pattern Property Keyword - `pattern`
+        - Pattern Property Delimiter
+        - Include `#`
+        - Include Identifier
+        - Quoted Match String Quotation Marks
+        - Quoted Include Quotation Marks
+        - Unquoted Scope Name
+
+    - __Powershell__:
+        - Operator
+        - Bracket Punctuation
+        - Pipeline `|`, Continuation ```
+        - Embedded Blocks
+
+    - __BATS__:
+        - Control Keywords
+        - Support Function
+        - Support Variable
+
+    - __Autoconf__:
+        - Logical Expression Scope
+        - Logical Expression Punctutation
+
+    - __Shellscript__:
+        - Test Brackets (`[[` && `]]`), other Logical Expressions
+        - Command Option Flags
+        - Parameter Expansion Operator
+        - Parameter Delimiters
+
+    - __Go__:
+        - Format String Expression
+        - Punctuation - Period
+        - Punctuation - Brackets
+        - Function
+        - (Quoted) Import Path
+
+    - __C#__
+        - Null Conditional Operator
+
+    - __CSS__:
+        - Variable Declaration
+        - Variable Reference
+
+    - __Lua__:
+        - Table Property
+        - Table Function Property
+        - Function Identifier
+        - EmmyLua Alias - Identifier
+
 
 ## 0.0.21
 

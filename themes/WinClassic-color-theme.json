@@ -2,7 +2,9 @@
     "name": "WinClassic",
     "type": "light",
     //#region UI
-    "colors": {
+
+    "colors":
+    {
         "activityBar.foreground":                            "#EAE8E8CC",
         "activityBar.background":                            "#D4D0C8",
 
@@ -67,7 +69,6 @@
         // EDIT: Nevermind, its exactly what the description says lol
         "editor.wordHighlightStrongBorder":                  "#4499FF00",
         "editor.wordHighlightStrongBackground":              "#4499FF55",
-
         // Used for other currently hovered symbol
         // EDIT: Nevermind, its exactly what the description says lol
         "editor.wordHighlightBackground":                    "#44AAFF40",
@@ -82,13 +83,18 @@
 
         "errorForeground":                                   "#990000",
 
+        "input.foreground":                                  "#222222",
+        "input.background":                                  "#FFFFFF",
+        "input.placeholderForeground":                       "#C8C8C8",
+        "input.border":                                      "#C8C8C8",
+
         "inputOption.activeForeground":                      "#867E6E",
         "inputOption.activeBackground":                      "#66BBFF55",
 
-        "input.placeholderForeground":                       "#C8C8C8",
-        "input.foreground":                                  "#222222",
-        "input.background":                                  "#FFFFFF",
-        "input.border":                                      "#00000000",
+        "quickInput.foreground":                             "#222222DD",
+        "quickInput.background":                             "#F3F3F3",
+        "quickInputList.focusForeground":                    "#222222",
+        "quickInputList.focusBackground":                    "#0066FF22",
 
         "list.activeSelectionForeground":                    "#EEEEEE",
         "list.activeSelectionBackground":                    "#0066FF",
@@ -162,10 +168,15 @@
         "titleBar.activeBackground":                         "#D4D0C8",
         "titleBar.activeForeground":                         "#867E6E",
     },
+
     //#endregion UI
 
     //#region Syntax
-    "tokenColors": [
+
+    //#region TextMate
+
+    "tokenColors":
+    [
         {
             "name": "Comment",
             "scope": "comment",
@@ -1912,10 +1923,55 @@
        * - Config Section
        * - Config Section Delimiters
        * Python
+       * - Docstring Body
+       * - Docstring Delimiters (`\"\"\"`)
+       * YAML-tmLanguage
+       * - Control Chars (\b, etc)
+       * - Top Level `name`
+       * - Top Level `name` - Delimiter `:`
+       * - Grammar Identifier
+       * - Top Level `repository`
+       * - Top Level `repository` - Delimiter `:`
+       * - Pattern Property Keyword - `pattern`
+       * - Pattern Property Delimiter
+       * - Include `#`
+       * - Include Identifier
+       * - Quoted Match String Quotation Marks
+       * - Quoted Include Quotation Marks
+       * - Unquoted Scope Name
+       * Powershell
+       * - Operator
+       * - Bracket Punctuation
+       * - Pipeline `|`, Continuation `\``
+       * - Embedded Blocks
+       * bats
+       * - Control Keywords
+       * - Support Function
+       * - Support Variable
+       * Autoconf
+       * - Logical Expression Scope
+       * - Logical Expression Punctutation
+       * Shellscript
+       * - Test Brackets (`[[` && `]]`), other Logical Expressions
+       * - Command Option Flags
+       * - Parameter Expansion Operator
+       * - Parameter Delimiters
+       * Go
+       * - Format String Expression
+       * - Punctuation - Period
+       * - Punctuation - Brackets
+       * - Function
+       * - (Quoted) Import Path
+       * C#
+       * - Null Conditional Operator
+       * CSS
+       * - Variable Declaration
+       * - Variable Reference
        * Lua
-       * - Table properties
+       * - Table Property
+       * - Table Function Property
        * - Function Identifier
-       * - Emmylua Documentation Comments
+       * - EmmyLua Alias - Identifier
        */
 
         //#region GitConfig
@@ -2134,19 +2190,6 @@
 
         //#endregion YAML-tmLanguage
 
-        //#region Go
-
-          {
-              "name": "Go - Format String Expression",
-              "scope": [ "constant.other.placeholder.go" ],
-              "settings": {
-                  "foreground": "#CC0000",
-                  "fontStyle": "bold italic"
-              }
-          },
-
-        //#endregion Go
-
         //#region Powershell
 
           {
@@ -2293,35 +2336,43 @@
 
         //#region bats
 
-          {
+          {   "name": "BATS - Control Keywords",
               "scope": "keyword.control.bats",
               "settings": {
                   "foreground": "#DD0099",
                   "fontStyle": "bold underline italic"
               }
           },
-          {
+          {   "name": "BATS - Support Function",
               "scope": "support.function.bats",
               "settings": {
                   "foreground": "#d41515",
                   "fontStyle": "italic"
               }
           },
-          {
+          {   "name": "BATS - Support Variable",
               "scope": "support.variable.bats",
               "settings": {
                   "foreground": "#DD0000",
                   "fontStyle": "italic"
               }
           },
-          {   "scope": "source.m4 meta.scope.logical-expression.shell",
+
+          //#endregion bats
+
+        //#region Autoconf
+
+          {   "name": "Autoconf - Logical Expression Scope",
+              "scope": "source.m4 meta.scope.logical-expression.shell",
               "settings":
               {
                   "foreground": "#CC2222",
                   "fontStyle": "italic"
               }
           },
-          {   "scope": "source.m4 punctuation.definition.logical-expression.shell",
+
+          {   "name": "Autoconf - Logical Expression Punctutation",
+              "scope": "source.m4 punctuation.definition.logical-expression.shell",
               "settings":
               {
                   "foreground": "#AA0000",
@@ -2329,12 +2380,11 @@
               }
           },
 
-        //#endregion bats
+        //#endregion Autoconf
 
         //#region Shellscript
 
-          {
-              "name": "Shellscript - Test Brackets (`[[` && `]]`), other Logical Expressions",
+          {   "name": "Shellscript - Test Brackets (`[[` && `]]`), other Logical Expressions",
               "scope":
               [
                   "source.shell punctuation.definition.logical-expression.shell"
@@ -2346,8 +2396,7 @@
               }
           },
 
-          {
-              "name": "Shellscript - Command Option Flags",
+          {   "name": "Shellscript - Command Option Flags",
               "scope":
               [
                   "source.shell constant.other.option.shell",
@@ -2360,8 +2409,7 @@
               }
           },
 
-          {
-              "name": "Shellscript - Parameter Expansion Operator",
+          {   "name": "Shellscript - Parameter Expansion Operator",
               "scope":
               [
                   "source.shell keyword.operator.expansion.shell",
@@ -2373,8 +2421,7 @@
               }
           },
 
-          {
-              "name": "Shellscript - Parameter Delimiters",
+          {   "name": "Shellscript - Parameter Delimiters",
               "scope":
               [
                   "source.shell punctuation.section.bracket.curly.variable.begin",
@@ -2390,6 +2437,14 @@
         //#endregion Shellscript
 
         //#region Go
+
+          {   "name": "Go - Format String Expression",
+              "scope": [ "constant.other.placeholder.go" ],
+              "settings": {
+                  "foreground": "#CC0000",
+                  "fontStyle": "bold italic"
+              }
+          },
 
           {   "name": "Go - Punctuation - Period",
               "scope":
@@ -2448,7 +2503,6 @@
                   "foreground": "#B90690",
                   "fontStyle": "italic bold"
               }
-
           },
 
         //#endregion C#
@@ -2529,60 +2583,769 @@
               }
           },
 
-        //#endregion Lua
+          {   "name": "Lua - Table Property",
+              "scope":
+              [
+                  "variable.other.table.property.lua"
+              ],
+              "settings":
+              {
+                  "fontStyle": "italic bold",
+                  "foreground": "#1545ac"
+              }
+          },
 
-        {   "name": "Lua - Table Property",
-            "scope":
-            [
-                "variable.other.table.property.lua"
-            ],
-            "settings":
-            {
-                "fontStyle": "italic bold",
-                "foreground": "#1545ac"
-            }
-        },
-        {   "name": "Lua - Table Function Property",
-            "scope":
-            [
-                "entity.name.function"
-            ],
-            "settings":
-            {
-                "fontStyle": "bold",
-                "foreground": "#D51015"
-            }
-        },
-        {   "name": "Lua - Function Identifier",
-            "scope":
-            [
-                "meta.function-call.lua entity.name.function"
-            ],
-            "settings":
-            {
-                "fontStyle": "bold",
-                "foreground": "#1f41b1"
-            }
-        },
-        {   "name": "Lua - EmmyLua Alias - Identifier",
-            "scope":
-            [
-                "comment.line.double-dash variable.lua"
-            ],
-            "settings":
-            {
-                "foreground": "#CC0000",
-                "fontStyle": "bold underline"
-            }
-        },
+          {   "name": "Lua - Table Function Property",
+              "scope":
+              [
+                  "entity.name.function"
+              ],
+              "settings":
+              {
+                  "fontStyle": "bold",
+                  "foreground": "#D51015"
+              }
+          },
+
+          {   "name": "Lua - Function Identifier",
+              "scope":
+              [
+                  "meta.function-call.lua entity.name.function"
+              ],
+              "settings":
+              {
+                  "fontStyle": "bold",
+                  "foreground": "#1f41b1"
+              }
+          },
+
+          {   "name": "Lua - EmmyLua Alias - Identifier",
+              "scope":
+              [
+                  "comment.line.double-dash variable.lua"
+              ],
+              "settings":
+              {
+                  "foreground": "#CC0000",
+                  "fontStyle": "bold underline"
+              }
+          },
+
+        //#endregion Lua
 
       //#endregion 0.0.22
     ],
 
-    /** TypeScript
-     *  - Semantic Highlighting
-     */
-    "semanticTokenColors": {
+    //#endregion TextMate
 
+    //#region Semantic
+
+    "semanticHighlighting": true,
+
+    "semanticTokenColors":
+    {
+        //#region 0.0.22
+        /**
+         * Global
+         * - comment
+         * - class
+         * - keyword
+         * - variable.defaultLibrary.readonly
+         * Powershell
+         * - type
+         * - *.language
+         * - property
+         * - variable
+         * - variable.other.readwrite
+         * - function
+         * - operator
+         * - number
+         * CSharp
+         * - namespace
+         * - plainKeyword
+         * - controlKeyword
+         * - enum
+         * - enumMember
+         * - operator
+         * - parameter
+         * - property
+         * - member
+         * - member.static
+         * - field
+         * - local
+         * - local.declaration
+         * - preprocessorText
+         * - preprocessorKeyword
+         * - xmlDocCommentComment
+         * - xmlDocCommentName
+         * - xmlDocCommentAttributeName
+         * - xmlDocCommentDelimiter
+         * - xmlDocCommentText
+         * Python
+         * - intrinsic
+         * - selfParameter
+         * - function
+         * - function.declaration
+         * - module
+         * Rust
+         * - operator
+         * - variable.static.constant
+         * - lifetime
+         * - function.attribute
+         * - namespace
+         * - comment.documentation
+         * - formatSpecifier
+         * - *.intraDocLink
+         * - brace.injected
+         * - parenthesis.injected
+         * - semicolon.injected
+         * - comma.injected
+         * - angle.injected
+         * - punctuation.injected
+         * - generic.injected
+         * - operator.injected
+         * Go
+         * - namespace
+         * - operator
+         * - parameter
+         * - parameter.definition
+         * - *.definition
+         * - type.definition
+         * - function
+         * - function.definition
+         * C
+         * - property
+         * - variable
+         * - variable.local
+         * - variable.global
+         * - namespace
+         * - preprocessorText
+         * - preprocessorKeyword
+         * - enumMember
+         * - macro
+         * - memberOperatorOverload
+         * Cpp
+         * - namespace
+         * - preprocessorText
+         * - preprocessorKeyword
+         * - enumMember
+         * - macro
+         * - memberOperatorOverload
+         * typescript
+         * - namespace
+         * - enum
+         */
+
+        "comment":
+        {
+            "foreground": "#408CFF"
+        },
+
+        "class":
+        {
+            "foreground": "#DD0000",
+            "bold": true,
+            "italic": false,
+            "underline": true
+        },
+
+        "keyword":
+        {
+            "foreground": "#0000FF",
+            "bold": true,
+            "italic": false,
+            "underline": false
+        },
+
+      //#region PowerShell
+
+        "type:powershell":
+        {
+            "foreground": "#CC0000",
+            "bold": true,
+            "italic": false,
+            "underline": true
+        },
+
+        "*.language:powershell":
+        {
+            "italic": true,
+            "foreground": "#00A"
+        },
+
+        "property:powershell":
+        {
+            "foreground": "#1436bf",
+            "bold": false,
+            "italic": false
+        },
+
+        "variable:powershell":
+        {
+            "foreground": "#118096",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "variable.defaultLibrary.readonly":
+        {
+            "foreground": "#AA0000",
+            "bold": true,
+            "italic": true,
+            "underline": false
+        },
+
+        "variable.other.readwrite:powershell":
+        {
+            "foreground": "#ff0000"
+        },
+
+        "function:powershell":
+        {
+            "foreground": "#00C",
+            "bold": true,
+            "italic": false,
+            "underline": false
+        },
+
+        "operator:powershell":
+        {
+            "foreground": "#00A",
+            "bold": false,
+            "italic": false,
+            "underline": false
+        },
+
+        "number:powershell":
+        {
+            "foreground": "#CC0000",
+            "bold": true,
+            "italic": true,
+            "underline": false
+        },
+
+      //#endregion PowerShell
+
+      //#region C#
+
+        "namespace:csharp": {
+            "foreground": "#CC0000",
+            "bold":       true,
+            "underline":  false,
+            "italic":     true
+        },
+
+        "plainKeyword:csharp":
+        {
+            "foreground": "#00F",
+            "underline": false,
+            "bold": true,
+            "italic": true
+        },
+
+        "controlKeyword:csharp":
+        {
+            "foreground": "#00F",
+            "underline": false,
+            "bold": true,
+            "italic": false
+        },
+
+        "enum:csharp":
+        {
+            "foreground": "#D00",
+            "underline": true,
+            "bold": false,
+            "italic": false
+        },
+
+        "enumMember:csharp":
+        {
+            "foreground": "#C00",
+            "underline": false,
+            "bold": false,
+            "italic": true
+        },
+
+        "operator:csharp":
+        {
+            "foreground": "#00A",
+            "bold": true,
+            "italic": false
+        },
+
+        "parameter:csharp":
+        {
+            "foreground": "#CC0044",
+            "underline": false,
+            "italic": true
+        },
+
+        "property:csharp":
+        {
+            "foreground": "#0519b5",
+            "bold": true,
+            "italic": true
+        },
+
+        "member:csharp":
+        {
+            "foreground": "#0017c7",
+            "bold": true,
+            "italic": false,
+            "underline": false
+        },
+
+        "member.static:csharp":
+        {
+            "italic": true,
+        },
+
+        "field:csharp":
+        {
+            "foreground": "#C00",
+            "bold": true,
+            "italic": false
+        },
+
+        "local:csharp":
+        {
+            "italic": false,
+            "foreground": "#318495",
+            "bold": false
+        },
+
+        "local.declaration:csharp":
+        {
+            "italic": true
+        },
+
+        "preprocessorText:csharp":
+        {
+            "foreground": "#3388FF",
+            "italic": true,
+            "bold": true,
+            "underline": true
+        },
+
+        "preprocessorKeyword:csharp":
+        {
+            "foreground": "#C00C",
+            "italic": false,
+            "bold": true,
+            "underline": false
+        },
+
+        "xmlDocCommentComment:csharp":
+        {
+            "bold": false,
+            "foreground": "#A08"
+        },
+
+        "xmlDocCommentName:csharp":
+        {
+            "bold": false,
+            "italic": true,
+            "foreground": "#0055AA"
+        },
+
+        "xmlDocCommentAttributeName:csharp":
+        {
+            "bold": false,
+            "italic": false,
+            "foreground": "#0022DD"
+        },
+
+        "xmlDocCommentDelimiter:csharp":
+        {
+            "bold": false,
+            "foreground": "#0066FFC0"
+        },
+
+        "xmlDocCommentText:csharp":
+        {
+            "bold": false,
+            "italic": true,
+            "underline": false,
+            "foreground": "#0066FF"
+        },
+
+      //#endregion C#
+
+      //#region Python
+
+        "intrinsic:python": {
+            "foreground": "#C00",
+            "bold": true
+        },
+
+        "selfParameter:python": {
+            "foreground": "#DD0000",
+            "bold": true,
+            "italic": true
+        },
+
+        "function:python": {
+            "foreground": "#CC0000",
+            "bold": false,
+            "italic": false
+        },
+
+        "function.declaration:python": {
+            "foreground": "#CC0000",
+            "bold": true,
+            "italic": true
+        },
+
+        "module:python": {
+            "foreground": "#0000AA",
+            "bold": true
+        },
+
+      //#endregion Python
+
+      //#region Rust
+
+        "operator:rust":
+        {
+            "foreground": "#0000FF",
+            "italic": false,
+            "underline": false,
+            "bold": false
+        },
+
+        // e.g. `DEBUG`
+        "variable.static.constant:rust":
+        {
+            "foreground": "#DD0000",
+            "italic": true,
+            "bold": true,
+            "underline": true
+        },
+
+        "lifetime:rust":
+        {
+            "foreground": "#CC0055",
+            "italic": true,
+            "underline": false,
+            "bold": true
+        },
+
+        "function.attribute:rust":
+        {
+            "foreground": "#99BBCC",
+            "italic": true,
+            "underline": false,
+            "bold": false
+        },
+
+        "namespace:rust": {
+            "foreground": "#0000AA",
+            "bold":       true,
+            "underline":  false,
+            "italic":     false
+        },
+
+        "comment.documentation:rust": {
+            "foreground": "#2083ff",
+            "bold":       false,
+            "underline":  false,
+            "italic":     true
+        },
+
+        "formatSpecifier:rust": {
+            "foreground": "#b90069",
+            "bold":       false,
+            "underline":  true,
+            "italic":     false
+        },
+
+        "*.intraDocLink:rust":
+        {
+            "underline": true,
+            "bold": false,
+            "italic": false,
+            "foreground": "#0000FF"
+        },
+
+        //#region Doccomment Injected Syntax
+
+        // Blanket application of base color to various (usually) non-styled syntax
+        // elements to emulate base color usually doable with textmate grammar
+        // syntax injections
+
+        "brace.injected:rust": {
+            "foreground": "#555555",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "parenthesis.injected:rust": {
+            "foreground": "#555555",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "semicolon.injected:rust": {
+            "foreground": "#555555",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "comma.injected:rust": {
+            "foreground": "#555555",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "angle.injected:rust": {
+            "foreground": "#555555",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "punctuation.injected:rust": {
+            "foreground": "#555555",
+            "italic": false,
+            "bold": false,
+            "underline": false
+        },
+
+        "generic.injected:rust": {
+            "foreground": "#318495",
+            "italic": true,
+            "bold": false,
+            "underline": false
+        },
+
+        // Used for something besides `::`?
+        "operator.injected:rust": {
+            "foreground": "#0000CC",
+            "bold": false,
+            "italic": false,
+            "underline": false
+        },
+
+        //#endregion Doccomment Injected Syntax
+
+      //#endregion Rust
+
+      //#region Go
+
+        "namespace:go": {
+            "foreground": "#0000DD",
+            "bold":       false,
+            "underline":  true,
+            "italic":     true
+        },
+
+        "operator:go": {
+            "foreground": "#000066",
+            "bold":       false,
+            "underline":  false
+        },
+
+        "parameter:go":
+        {
+            "italic":     true,
+            "foreground": "#CC0000"
+        },
+
+        "parameter.definition:go":
+        {
+            "bold": false,
+        },
+
+        "*.definition:go":
+        {
+            "italic": true,
+        },
+
+        // ...except type declarations
+        "type.definition:go":
+        {
+            "italic": false
+        },
+
+        "function:go":
+        {
+            "foreground": "#CC0000",
+            "bold": false,
+            "italic": false,
+            "underline": false
+        },
+
+        "function.definition:go":
+        {
+            "italic": true,
+        },
+
+      //#endregion Go
+
+      //#region C
+
+        "property:c":
+        {
+            "foreground": "#0000AA",
+            "bold": false,
+            "underline": false,
+            "italic": false
+        },
+
+        "variable:c":
+        {
+            "foreground": "#ba001c",
+            "bold": false,
+            "underline": false,
+            "italic": false
+        },
+
+        "variable.local:c":
+        {
+            "foreground": "#318495",
+            "bold": false,
+            "underline": false,
+            "italic": false
+        },
+
+        "variable.global:c":
+        {
+            "foreground": "#DD0000",
+            "bold": true,
+            "underline": true,
+            "italic": true
+        },
+
+        "namespace:c": {
+            "foreground": "#0000EE",
+            "italic":     true,
+            "bold":       true,
+            "underline":  false
+        },
+
+        "preprocessorText:c": {
+            "foreground": "#3388FF",
+            "italic":     true,
+            "bold":       true,
+            "underline":  true
+        },
+
+        "preprocessorKeyword:c": {
+            "foreground": "#C00C",
+            "italic":     false,
+            "bold":       true,
+            "underline":  false
+        },
+
+        "enumMember:c": {
+            "foreground": "#0011DD",
+            "italic":     false,
+            "bold":       false,
+            "underline":  true
+        },
+
+        "macro:c":
+        {
+            "foreground": "#CC0000",
+            "italic":     true,
+            "bold":       true,
+        },
+
+        "memberOperatorOverload:c":
+        {
+            "italic":     true,
+            "underline":  false,
+            "bold":       false,
+            "foreground": "#1144AA"
+        },
+
+      //#endregion C
+
+      //#region C++
+
+        "namespace:cpp": {
+            "foreground": "#0000EE",
+            "italic":     true,
+            "bold":       true,
+            "underline":  false
+        },
+
+        "preprocessorText:cpp": {
+            "foreground": "#3388FF",
+            "italic":     true,
+            "bold":       true,
+            "underline":  true
+        },
+
+        "preprocessorKeyword:cpp": {
+            "foreground": "#C00C",
+            "italic":     false,
+            "bold":       true,
+            "underline":  false
+        },
+
+        "enumMember:cpp": {
+            "foreground": "#000088",
+            "italic":     false,
+            "bold":       false,
+            "underline":  true
+        },
+
+        "macro:cpp":
+        {
+            "italic":     true,
+            "bold":       true,
+            "foreground": "#004499"
+        },
+
+        "memberOperatorOverload:cpp":
+        {
+            "italic":     true,
+            "underline":  false,
+            "bold":       false,
+            "foreground": "#1144AA"
+        },
+
+      //#endregion C++
+
+      //#region {Type,Java}Script
+
+        "namespace:typescript":
+        {
+            "foreground": "#DD0000",
+            "bold":       true,
+            "underline":  true,
+            "italic":     true
+        },
+
+        "enum:typescript":
+        {
+            "foreground": "#0033CC",
+            "bold":       false,
+            "underline":  true
+        },
+
+      //#endregion {Type,Java}Script
+
+      //#region Lua
+
+        // Non-local (global) variable — improve when vscode-lua expands semantic tokens selection
+        // (and replaces namespace.depreciated for global variable????)
+        "namespace.deprecated:lua":
+        {
+            "italic": true
+        }
+
+      //#endregion Lua
+
+      //#endregion 0.0.22
     }
+
+    //#endregion Semantic
 }
