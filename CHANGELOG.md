@@ -1,11 +1,22 @@
 # Change Log
 
+## 0.0.23
+
+- __Editor__:
+
+    - Fixed quick input colors
+
+- __Semantic Tokens__:
+
+    - __Lua__:
+
+        - `namespace.depreciated` (Global Variable)
+
 ## 0.0.22
 
 - __Editor__:
 
     - Fixed editor suggestion colors
-    - Fixed quick input colors
     - Symbol and symbol reference highlight/emphasis
 
 - __Semantic Tokens__:
