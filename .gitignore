@@ -1,5 +1,5 @@
 # gitignore
-packages/
+package/
 
 # Generated
 node_modules
