@@ -1915,7 +1915,8 @@
       //#endregion 0.0.19-21
 
 
-      //#region 0.0.22
+      //#region 0.0.22-23
+
       /**
        * GitConfig
        * - Config Section Entry Name
@@ -2633,7 +2634,147 @@
 
         //#endregion Lua
 
-      //#endregion 0.0.22
+      //#endregion 0.0.22-23
+
+      //#region 0.0.24
+
+      /**
+       * RegExp
+       * - Capture Group Delimiters
+       * - Lookaround Assertion Capture Group Delimiters
+       * - Quantifier (Full)
+       * - Named Capture Group Identifier
+       * - Anchor
+       * - Postfix Flags (`/regex/flags`)
+       * - Single Character Class
+       */
+        //#region Regexp
+
+        {   "name": "RegExp - Capture Group Delimiters",
+            "scope":
+            [
+                //#section Perl 5
+                "meta.group.regexp.perl punctuation.definition.group",
+
+                //#section ECMAScript
+                "meta.group.regexp punctuation.definition.group.regexp",
+
+            ],
+            "settings":
+            {
+                "foreground": "#0088AA",
+                "fontStyle": "bold"
+            }
+        },
+
+        {   "name": "RegExp - Lookaround Assertion Capture Group Delimiters",
+            "scope":
+            [
+                //#section Perl 5
+                "meta.group.regexp.perl meta.assertion.look-ahead.regexp.perl",
+                "meta.group.regexp.perl meta.assertion.negative-look-ahead.regexp.perl",
+                "meta.group.regexp.perl meta.group.assertion.regexp.perl punctuation.definition.group.regexp.perl",
+
+                //#section ECMAScript
+                "meta.assertion.look-behind.regexp",
+                "meta.assertion.look-ahead.regexp",
+                "meta.assertion.negative-look-behind.regexp",
+                "meta.assertion.negative-look-ahead.regexp",
+                "meta.group.assertion.regexp punctuation.definition.group.regexp",
+            ],
+            "settings":
+            {
+                "foreground": "#13A",
+                // "foreground": "#B90690",
+                "fontStyle": "bold"
+            }
+        },
+
+        {   "name": "RegExp - Quantifier (Full)",
+            "scope":
+            [
+                //#section Perl 5
+                "keyword.operator.quantifier.regexp.perl",
+
+                //#section ECMAScript
+                "keyword.operator.quantifier.regexp",
+            ],
+            "settings":
+            {
+                "foreground": "#029",
+                "fontStyle": ""
+            }
+        },
+
+        {   "name": "RegExp - Named Capture Group Identifier",
+            "scope":
+            [
+                //#section Perl 5
+                // (Declarations not detected in common/extension grammars?)
+
+                //#section ECMAScript
+                "punctuation.definition.group.regexp variable.other.regexp",
+            ],
+            "settings":
+            {
+                "foreground": "#C00",
+                "fontStyle": "underline"
+            }
+        },
+
+        {   "name": "RegExp - Anchor",
+            "scope":
+            [
+                //#section Perl 5
+                "keyword.control.anchor.regexp.perl",
+
+                //#section ECMAScript
+                "keyword.control.anchor.regexp",
+            ],
+            "settings":
+            {
+                "foreground": "#D00",
+                "fontStyle": "bold"
+            }
+        },
+
+        {   "name": "RegExp - Postfix Flags (`/regex/flags`)",
+            "scope":
+            [
+                //#section Perl 5
+                "keyword.control.anchor.regexp.perl",
+
+                //#section ECMAScript
+                "source.ts string.regexp.ts keyword.other",
+                "source.js string.regexp.js keyword.other",
+            ],
+            "settings":
+            {
+                "foreground": "#A00",
+                "fontStyle": "italic"
+            }
+        },
+
+        {   "name": "RegExp - Single Character Class",
+            "scope":
+            [
+                //#section Perl 5
+                "keyword.control.anchor.regexp.perl",
+
+                //#section ECMAScript
+                "constant.other.character-class.regexp",
+            ],
+            "settings":
+            {
+                "foreground": "#C00",
+                "fontStyle": ""
+            }
+        },
+
+        //#endregion Regexp
+
+
+      //#endregion 0.0.24
     ],
 
     //#endregion TextMate
